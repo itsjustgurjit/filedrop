@@ -1,0 +1,25 @@
+{
+    "name": "Webzify",
+    "short_name": "Webzify",
+    "icons": [
+        {
+            "src": "./favicon.svg",
+            "type": "image/png",
+            "sizes": "120x120"
+        },
+        {
+            "src": "./favicon.svg",
+            "type": "image/png",
+            "sizes": "155x150"
+        },
+        {
+            "src": "./favicon.svg",
+            "type": "image/png",
+            "sizes": "200x200"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
+}

@@ -1,0 +1,18 @@
+name: filetransfer
+title: filetransfer
+email: your-email@filetransfer.com
+description: Webzify is a free online service that offers a collection of web tools. These tools are designed to simplify your work and help you improve your website without any cost to you.
+baseurl: "" 
+url: https://filetransfer.com
+favicon: /favicon.svg
+permalink: /blog/:title
+paginate: '12'
+paginate_path: '/blog/page:num/'
+twitter_username: jekyllrb
+github_username:  jekyll
+keywords: Seo Tools, Web Tools, Text Tools, Image Tools, Video Tools, Website Management Tools, Domain Tools, PDF Tools, Development Tools, Unit Converter, Online Calculators
+languageslist: en&&hi&&ru&&zh-tw&&ja&&es&&fr&&de&&ko&&th&&uk&&vi
+plugins:
+  - jekyll-feed
+  
+  

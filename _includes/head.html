@@ -1,0 +1,52 @@
+<head>
+  {% assign folder = page.folderName %}
+  {% assign file = page.fileName %}
+  {% assign lang = page.lang %}
+  {% assign pageData = site.data[folder][lang][file] %}
+  {% assign title = pageData.title | default: page.title | default: site.title %}
+  {% assign keywords = pageData.keywords %}{% assign favicon = site.favicon %}
+  {% assign description = pageData.meta | default: page.description | default: site.description %}
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{description}}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="{{site.url | append:  page.url}}" />
+  <link rel="shortcut icon" href="{{favicon}}" />
+  <link rel="icon" href="{{site.url}}{{favicon}}">
+  <link rel="apple-touch-icon" href="{{site.url}}{{favicon}}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="og:site_name" content="{{site.name}}" />
+  <meta property="og:title" content="{{title}}" />
+  <meta property="og:description" content="{{description}}" />
+  <meta property="og:image" content="{{site.url}}{{favicon}}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{site.url | append:  page.url}}" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@{{site.name}}">
+  <meta name="twitter:creator" content="@{{site.name}}">
+  <meta name="twitter:title" content="{{title}}" />
+  <meta name="twitter:description" content="{{description}}" />
+  <meta name="twitter:image" content="{{site.url}}{{favicon}}" />
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  {%- include structuredata.html -%}
+  
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service_worker.js')
+          .then((reg) => console.log('Success: ', reg.scope))
+          .catch((err) => console.log('Failure: ', err));
+      })
+    }
+  </script>
+  {% if jekyll.environment == 'production' %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-28ZB3FXS8H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-28ZB3FXS8H');
+  </script>
+  {%- endif -%}
+</head>

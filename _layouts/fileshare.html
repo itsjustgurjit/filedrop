@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{%- include head.html -%}
+
+<body>
+    {%- include navbar.html -%}
+    
+    <div class="container">
+        <h1 class="main-heading">{{pageData.h1}}</h1>
+        <h2 class="subtitle">{{pageData.h2}}</h2>
+        <div class="connection-info">
+            <p>YOUR ID:</p>
+            <div id="connectionId">2387</div>
+        </div>
+        <div id="fileTransfer">
+            <label for="fileInput" class="file-drop-zone">
+                <div class="add-file-button txt-black">
+                    Add file
+                </div>
+            </label>
+            <input type="file" id="fileInput" multiple />
+
+
+            <div class="progress-container" id="progressContainer">
+                <div class="file-info" id="fileInfo"></div>
+                <progress id="progress" max="100" value="0"></progress>
+                <div id="transferStatus"></div>
+            </div>
+        </div>
+        <div id="receivedFilesContainer">
+            <h3></h3>
+            <ul id="receivedFiles"></ul>
+        </div>
+        <div class="receiver-card" id="connection-input-status">
+            <h3>Receiving a file?</h3>
+            <div class="connection-input">
+                <input type="text" id="peerIdInput" placeholder="Enter id here" />
+                <button id="connectButton" class="connectButton">Connect</button>
+            </div>
+            <p class="helper-text">
+                you can either connect this way or just add a file and then connnect after that
+            </p>
+        </div>
+        <div id="status"></div>
+    </div>
+    <!-- ham -->
+    <div id="sideMenu" class="menu">
+        <div class="menu-close" onclick="toggleMenu()">×</div>
+        <ul>
+        </ul>
+    </div>
+
+    <div id="generated_link_div" style="display: none;">
+        <h2>Share Link:</h2>
+        <a id="shareLink" href="#">Click to copy link</a>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.4.7/peerjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="/assets/js/nav.js"></script>
+    <script src="/assets/js/fileShare.js"></script>
+    <script src="/assets/js/modal.js"></script>
+</body>
+
+</html>
