@@ -264,10 +264,12 @@ progress::-webkit-progress-value {
 }
 
 #receivedFilesContainer {
-  margin-top: 40px;
+  /* margin-top: 40px; */
 }
 
 #receivedFiles {
+  height: 80px;
+  overflow-y: scroll;
   list-style: none;
 }
 
