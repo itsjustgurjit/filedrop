@@ -1,0 +1,84 @@
+{
+    "logo": "/logo.svg",
+    "description": "Webzify is a free online service that offers a collection of web-based tools. These tools are designed to simplify your work and help you improve your website without any cost to you.",
+    "social": [
+      {
+        "logo": "/assets/images/facebook.svg",
+        "url": "https://www.facebook.com",
+        "title": "facebook"
+      },
+      {
+        "logo": "/assets/images/twitter.svg",
+        "url": "https://twitter.com",
+        "title": "twitter"
+      },
+      {
+        "logo": "/assets/images/instagram.svg",
+        "url": "https://www.instagram.com/webzify_onlinetools/",
+        "title": "instagram"
+      },
+      {
+        "logo": "/assets/images/linkedin.svg",
+        "url": "https://linkedin.com",
+        "title": "linkedin"
+      }
+    ],
+    "company": [
+      
+      {
+        "name": "Sitemap Checker",
+        "url": "/sitemap-checker"
+      },
+      {
+        "name": "Slug Generator",
+        "url": "/slug-generator"
+      },
+      {
+        "name": "Favicon Checker",
+        "url": "/favicon-checker"
+      },
+      {
+        "name": "Canonical URL Checker",
+        "url": "/canonical-url-checker"
+      }
+    ],
+    "quickLinks": [
+      {
+        "name": "Image to text Converter",
+        "url": "/image-to-text",
+        "icon": "/assets/images/image-to-text.svg"
+      },
+      {
+        "name": "Online Photo Converter",
+        "url": "/photo-converter"
+      },
+      {
+        "name": "PNG to JPG Converter",
+        "url": "/png-to-jpg"
+      },
+      {
+        "name": "JPG to WEBP Converter",
+        "url": "/jpg-to-webp"
+      }
+    ],
+    "freeTools": [
+     
+      {
+        "name": "Text to Handwriting",
+        "url": "/text-to-handwriting"
+      },
+      {
+        "name": "Online Text Compare",
+        "url": "/text-compare"
+      },
+      {
+        "name": "Case Converter",
+        "url": "/case-converter"
+      },
+      {
+        "name": "Word Counter",
+        "url": "/word-count"
+      }
+    ],
+    "message": "© 2024 Webzify. All Right Reserved."
+  }

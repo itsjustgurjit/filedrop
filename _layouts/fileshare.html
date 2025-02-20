@@ -6,83 +6,7 @@
 <body>
     {%- include navbar.html -%}
 
-
-    <div class="loader">
-        <div class="spinner"></div>
-
-    </div>
-
-
-    <style>
-        #svg_edt {
-            background: #dbff4b;
-            padding: 9px;
-            border-radius: 100px;
-            height: 64px;
-            width: 64px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .download-btn {
-            padding: 6px 6px 6px 20px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            background: #fff;
-            border: none;
-            outline: none;
-            /* width: 250px; */
-            /* height: 55px; */
-            border-radius: 50px;
-            color: black;
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.4rem;
-            margin: 1rem auto;
-            font-weight: 600;
-        }
-
-        .loader {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0px;
-            left: 0px;
-            align-items: center;
-            justify-content: center;
-            z-index: 999999;
-            display: none;
-            background-color: rgba(20, 20, 20, 0.514);
-
-        }
-
-        .spinner {
-
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: radial-gradient(farthest-side, #474bff 94%, #0000) top/9px 9px no-repeat,
-                conic-gradient(#0000 30%, #474bff);
-            -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
-            animation: spinner-c7wet2 1s infinite linear;
-        }
-
-        @keyframes spinner-c7wet2 {
-            100% {
-                transform: rotate(1turn);
-            }
-        }
-    </style>
-
-
-
-    <div class="container">
-
-      <button id="process">Start Processing</button>
+    <div class="file-share-container">
         <h1 class="main-heading">{{pageData.h1}}</h1>
         <h2 class="subtitle">{{pageData.h2}}</h2>
         <div class="connection-info">
@@ -117,19 +41,22 @@
             </p>
         </div>
         <div id="status"></div>
-
-    </div>
-    <!-- ham -->
-    <div id="sideMenu" class="menu">
-        <div class="menu-close" onclick="toggleMenu()">×</div>
-        <ul>
-        </ul>
+        <div id="generated_link_div" style="display: none;">
+            <h2>Share Link:</h2>
+            <a id="shareLink" href="#">Click to copy link</a>
+        </div>
     </div>
 
-    <div id="generated_link_div" style="display: none;">
-        <h2>Share Link:</h2>
-        <a id="shareLink" href="#">Click to copy link</a>
+    <div class="container-fluid" style="background: black;">
+        <div class="container">
+            {%- include how-to.html -%}
+            {%- include featurehighlights.html -%}
+            {%- include faqs.html -%}
+        </div>
     </div>
+
+    {%- include footer.html -%}
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.4.7/peerjs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="/assets/js/nav.js"></script>

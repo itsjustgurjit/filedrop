@@ -1,8 +1,8 @@
 ---
 layout: fileshare
 folderName: features
-fileName: gb-file-transfer
+fileName: file-share
 lang: en
-permalink: /gb-file-transfer
+permalink: /file-share
 ---
 

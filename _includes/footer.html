@@ -1,0 +1,97 @@
+{% assign lang = page.lang %}
+{% assign footerData = site.data.footer[lang].data %}
+
+<footer class="mt-5 bottom-footer">
+  <div class="container-lg">
+    <div class="footer-section px-5">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="footer-logo">
+              <a class="navbar-brand" href="/">
+                <img width="150px" src="{{footerData.logo}}" alt="Webzify">
+              </a>
+            </div>
+            <p class="text-white my-4">{{footerData.description}}</p>
+            <div class="d-flex social-links mb-4 gap-2">
+              {%- for link in footerData.social -%}
+              <a target="_blank" class="share-btn {{link.title}}-link" href="{{link.url}}">
+                <img width="25px" height="25px" src="{{link.logo}}" alt="{{link.title}}">
+              </a>
+              {%- endfor -%}
+            </div>
+          </div>
+
+
+      
+
+          <div class="col-md-3">
+
+           
+            <div class="footer-category">Quick Links</div>
+         
+            <ul class="footer-list">
+              {%- for link in footerData.quickLinks -%}
+              <li><a class="footer-link" href="{{link.url}}">{{link.name}}</a></li>
+              {%- endfor -%}
+            </ul>
+          </div>
+          <div class="col-md-3">
+            {%- if page.lang == "en" -%}
+            <div class="footer-category">Text Tools</div>
+            {%- else -%}
+            <div class="footer-category">Free Tools</div>
+            {%- endif -%}
+            
+            <ul class="footer-list">
+              {%- for link in footerData.freeTools -%}
+              <li><a class="footer-link" href="{{link.url}}">{{link.name}}</a></li>
+              {%- endfor -%}
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            {%- if page.lang == "en" -%}
+            <div class="footer-category">SEO Analysis Tools</div>
+            {%- else -%}
+            <div class="footer-category">Company</div>
+            {%- endif -%}
+            <ul class="footer-list">
+              {%- for link in footerData.company -%}
+              <li><a class="footer-link" href="{{link.url}}">{{link.name}}</a></li>
+              {%- endfor -%}
+            </ul>
+          </div>
+
+
+          <div class="col-md-12 d-flex align-items-center justify-content-between footer-trademark">
+            <p class="mb-0 trademark-message">{{footerData.message}} </p>
+            <div class="d-flex gap-4 footer-static-links">
+              <a class="footer-link" href="/about">About US</a>
+              <a class="footer-link" href="/blog">Blog</a>
+              <a class="footer-link" href="/terms-and-conditions">Terms & conditions</a>
+              <a class="footer-link" href="/privacy">Privacy</a>
+              <a class="footer-link" href="/contact">Contact Us</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="scroll-top" onclick="scrollToTop()">
+          <img width="25px" height="25px" src="/assets/images/down-arrow.svg" alt="down-arrow">
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.onscroll = scrollFunction;
+  function scrollFunction() {
+    var scrollTopButton = document.querySelector('.scroll-top');
+    scrollTopButton.style.display = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? "flex" : "none";
+  }
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>

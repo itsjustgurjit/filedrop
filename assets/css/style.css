@@ -1,44 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, "inter", "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, sans-serif;
   font-weight: 400;
 }
 
-.nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 1.4rem;
-}
-.nav button {
-  font-size: 1.6rem;
-}
-.logo {
-  font-family: Bebas Neue;
-  font-size: 1.6rem;
-}
-.logo span {
-  font-family: Bebas Neue;
-  font-size: 1.6rem;
-}
 body {
+  font-family: "Poppins", serif;
   background: black;
   min-height: 100vh;
   color: white;
 }
 
-/* .container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  height: 100vh;
-  } */
-.container {
+/* navbar css */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.4rem;
+}
+
+.nav button {
+  font-size: 1.6rem;
+}
+
+.logo {
+  font-family: Bebas Neue;
+  font-size: 1.6rem;
+}
+
+.logo span {
+  font-family: Bebas Neue;
+  color: #dbff4b;
+  font-size: 1.6rem;
+}
+
+/* home page css */
+
+.file-share-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,8 +52,7 @@ body {
 }
 
 /* Add this to create the gradient effect */
-.container::before {
-  
+.file-share-container::before {
   content: "";
   position: fixed;
   bottom: -50%;
@@ -67,44 +67,6 @@ body {
   filter: blur(29px);
 }
 
-h1 {
-  font-size: 24px;
-  margin-bottom: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: Bebas Neue, serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.logo span {
-  color: #dbff4b;
-}
-
-.main-heading {
-  text-align: center;
-  font-size: 3.1rem;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-  justify-content: center;
-}
-
-.main-heading span {
-  color: #dbff4b;
-}
-
-.main-heading-span {
-  font-family: Bebas Neue;
-}
-
-.subtitle {
-  text-align: center;
-  color: #888;
-  font-size: 17px;
-  margin-bottom: 1.5rem;
-}
-
 .connection-info {
   text-align: center;
   margin-bottom: 40px;
@@ -114,10 +76,12 @@ h1 {
   justify-content: center;
   gap: 10px;
 }
+
 .connection-info p {
   font-family: Bebas Neue;
   font-size: 1.8rem;
 }
+
 #connectionId {
   font-family: Bebas Neue;
   font-size: 2.5rem;
@@ -153,10 +117,12 @@ h1 {
   color: #333;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
 .add-file-button:hover {
   scale: 1.02;
   transition: all 0.1s ease-in-out;
 }
+
 .add-file-button::before {
   content: "+";
   display: flex;
@@ -172,11 +138,9 @@ h1 {
   font-weight: bold;
   color: black;
 }
+
 .add-file-button::before :hover {
   background: #bbe027;
-}
-
-.progress-container {
 }
 
 progress {
@@ -263,10 +227,6 @@ progress::-webkit-progress-value {
   margin-top: 10px;
 }
 
-#receivedFilesContainer {
-  /* margin-top: 40px; */
-}
-
 #receivedFiles {
   height: 80px;
   overflow-y: scroll;
@@ -291,16 +251,19 @@ progress::-webkit-progress-value {
 #generated_link_div {
   text-align: center;
 }
+
 #generated_link_div button {
   padding: 9px 20px;
   background: #e8ff46;
   border-radius: 11px;
   border: none;
 }
+
 #shareLink {
   color: #000000;
   text-decoration: none;
 }
+
 .file-info {
   margin-top: 3rem;
 }
@@ -316,16 +279,20 @@ progress::-webkit-progress-value {
   bottom: 3vh;
   backdrop-filter: blur(8px);
 }
+
 .share-link {
   font-weight: 500;
   font-size: 1.1rem;
 }
+
 .copy-button {
   font-weight: 600;
 }
+
 #peerId-modal {
   padding: 22px;
 }
+
 .connect-section button {
   border-radius: 19px;
   padding: 9px 29px;
@@ -334,183 +301,291 @@ progress::-webkit-progress-value {
   background: #e8ff46;
   border: navajowhite;
 }
+
 .id-section h3,
 .random-id {
   font-family: Bebas Neue;
 }
+
 #qrcode {
   scale: 1.3;
 }
+
 .menu {
-    position: fixed;
-    top: 0;
-    right: -300px; /* Hide initially */
-    width: 250px;
-    height: 100%;
-    background: #000000fb;
-    color: white;
-    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.541);
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    backdrop-filter: blur(8px);
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  /* Hide initially */
+  width: 250px;
+  height: 100%;
+  background: #000000fb;
+  color: white;
+  box-shadow: -3px 0 5px rgba(0, 0, 0, 0.541);
+  transition: right 0.3s ease-in-out;
+  padding: 20px;
+  backdrop-filter: blur(8px);
+  z-index: 1000;
 }
+
 .menu.active {
-    right: 0;
+  right: 0;
 }
-.sidemenu-input{
-    padding: 10px;
+
+.sidemenu-input {
+  padding: 10px;
 }
+
 .menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-.sidemenu-connect{
-    padding: 9px 15px;
-    background-color: #dbff4c;
+
+.sidemenu-connect {
+  padding: 9px 15px;
+  background-color: #dbff4c;
 }
+
 .menu ul li {
-    padding: 15px 0;
-    border-bottom: 1px solid #000000;
+  padding: 15px 0;
+  border-bottom: 1px solid #000000;
 }
+
 .menu ul li:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
+
 .menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    cursor: pointer;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  cursor: pointer;
 }
+
 .menu button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    text-align: left;
-    width: 100%;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
 }
+
 .menu-close {
-    text-align: right;
-    cursor: pointer;
-    font-size: 24px;
+  text-align: right;
+  cursor: pointer;
+  font-size: 24px;
 }
+
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 .modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 500px;
-    bottom: 3vh;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  bottom: 3vh;
 }
 
 .link-container {
-    background: #e8ff45;
-    padding: 12px;
-    border-radius: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  background: #e8ff45;
+  padding: 12px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
-.share-modal{
-display:flex;
-flex-direction:column;
-    }
+
+.share-modal {
+  display: flex;
+  flex-direction: column;
+}
 
 .copy-button {
-    background: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 20px;
-    cursor: pointer;
+  background: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 .id-section {
-    text-align: center;
-    margin: 20px 0;
+  text-align: center;
+  margin: 20px 0;
 }
 
 .random-id {
-    font-size: 32px;
-    font-weight: bold;
-    margin: 10px 0;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px 0;
 }
 
 .qr-section {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 }
 
 .help-text {
-    text-align: center;
-    margin: 20px 0;
+  text-align: center;
+  margin: 20px 0;
 }
 
 .tutorial-link {
-    color: #0066cc;
-    text-decoration: none;
+  color: #0066cc;
+  text-decoration: none;
 }
 
 .connect-section {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .id-input {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    outline: none;
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
 }
 
 .connect-button {
-    background: #e8ff45;
-    border: none;
-    padding: 8px 24px;
-    border-radius: 20px;
-    cursor: pointer;
+  background: #e8ff45;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 20px;
+  cursor: pointer;
 }
-    .close-button {
-    position: relative;
-bottom: 6px;
-border: none;
-font-size: 24px;
-cursor: pointer;
-color: #666;
-width: 30px;
-height: 30px;
-display: flex
-;
-align-items: center;
-justify-content: center;
-border-radius: 50%;
-align-self: end;
-transition: background-color 0.3s;
+
+.close-button {
+  position: relative;
+  bottom: 6px;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  align-self: end;
+  transition: background-color 0.3s;
 }
 
 .close-button:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
+/* h1 and h2 css */
+
+.main-heading {
+  font-family: "Bebas Neue", serif;
+  font-size: 24px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  font-size: 3.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  justify-content: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: #888;
+  font-size: 17px;
+  margin-bottom: 1.5rem;
+}
+
+/* how to css */
+.howto-title {
+  text-align: center;
+}
+
+.howto-steps {
+  
+  background-color: #dbff4b;
+  color: #000;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 300px;
+}
+
+.howto-content {
+  justify-content: center;
+  display: flex;
+  gap: 20px;
+  text-align: left;
+}
+
+/* feature highlights css */
+.feature-highlights{
+  margin: 5rem 0;
+}
+.feature-title{
+  font-size: 20px;
+  font-weight: 700;
+}
+.feature-description{
+  font-weight: 300;
+}
+/* faqs css */
+.faq_wrapper {
+  backdrop-filter: blur(10px);
+  text-align: left;
+  background-color:#ffffff1a;
+  color: #fff;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 12px;
+}
+
+/* footer css */
+footer {
+  padding: 3rem;
+  background-color: black;
+}
+
+.footer-list {
+  padding: 0;
+  list-style: none;
+}
+
+.footer-list li {
+  padding-bottom: 1rem;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer-category {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
 
 
 @media (max-width: 768px) {
@@ -531,9 +606,11 @@ transition: background-color 0.3s;
   .connectButton {
     width: 100%;
   }
+
   .connect-section {
     flex-wrap: wrap;
   }
+
   .connect-section button {
     border-radius: 19px;
     padding: 15px 29px;

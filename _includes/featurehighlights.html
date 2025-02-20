@@ -1,0 +1,14 @@
+<!-- feature highlights component -->
+{%- if pageData.featureHighlights.size > 0 -%}
+<div class="feature-highlights">
+  <div class="row pt-4">
+    {%- for data in pageData.featureHighlights -%}
+    <div class="text-center mb-3 col-md-4">
+      <img src="{{data.image}}" width="48px" alt="">
+      <h3 class="mt-2 feature-title">{{data.title}}</h3>
+      <p class="feature-description">{{data.description}}</p>
+    </div>
+    {%- endfor -%}
+  </div>
+</div>
+{%- endif -%}

@@ -1,0 +1,16 @@
+{%- if pageData.faqs.size>0 -%}
+<div class="faqs mt-5">
+    <h2 class="text-center fw-bolder feature-heading">Frequently Asked Questions</h2>
+    <div class="faqs-content pt-4">
+        {%- for data in pageData.faqs -%}
+        <div class="faq_wrapper">
+            <p>{{data.question}}</p>
+            <p class="faq__content" style="color: #5c5e60; font-size: 14px">
+                {{data.answer}}
+            </p>
+        </div>
+        {%- endfor -%}
+    </div>
+</div>
+{%- endif -%}
+
