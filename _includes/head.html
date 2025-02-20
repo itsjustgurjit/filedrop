@@ -5,7 +5,15 @@
   {% assign pageData = site.data[folder][lang][file] %}
   {% assign title = pageData.title | default: page.title | default: site.title %}
   {% assign keywords = pageData.keywords %}{% assign favicon = site.favicon %}
+
+
+  {%- if page.layout == "post" -%}
+  {%- assign description = page.description | default: page.content | markdownify | strip_html | truncatewords: 50 |
+  default: page.excerpt | default: site.description -%}
+  {%- else -%}
   {% assign description = pageData.meta | default: page.description | default: site.description %}
+  {%- endif -%}
+
   <meta charset="UTF-8">
   <title>{{ title }}</title>
   <meta name="description" content="{{description}}" />

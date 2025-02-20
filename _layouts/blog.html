@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+{%- include /head.html -%}
+
+
+<style>
+  .card {
+    height: 100%;
+  }
+
+  .card-title a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  .card-title{
+    font-size: 20px !important;
+  }
+  .post-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+</style>
+
+<body>
+  {%- include /navbar.html -%}
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-lg-10  mx-auto">
+        <div class="mt-5 headings text-left">
+
+       
+          <h1>The FileDropShare Blog</h1>
+        
+        </div>
+
+        <section class="row">
+          {% for post in paginator.posts %}
+          <div class="col-md-4 mb-5">
+            <div class="card p-3">
+              <a href="{{ post.url | absolute_url }}">
+                {% if post.image %} <img class="w-100 rounded mb-4" src="{{ site.baseurl }}/{{ post.image }}"
+                  alt="{{ post.title }}"> {% endif %}
+              </a>
+              <div class="card-block">
+                <h3 class="card-title h4 serif-font"><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h3>
+                <p class="card-text text-muted">{{ post.excerpt | strip_html | truncatewords:16 }}</p>
+
+                <div class="metafooter">
+                  <div class="wrapfooter small d-flex align-items-center">
+                    <div class="post-data">
+                      <img loading="lazy" src="/favicon.svg" alt="Author Image" width="30px" height="30px" />
+                      <div class="post-bio">
+                        <p class="mb-0" style="font-size: 15px">Webzify Staff</p>
+                        <span class="post-date" style="color: gray;">{{ post.date | date_to_string }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+      </div>
+      </section>
+
+    </div>
+  </div>
+  </div>
+  {%- include /footer.html -%}
+</body>
+
+</html>

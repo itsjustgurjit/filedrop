@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+{%- include head.html -%}
+
+<style>
+    .language-dropdown{
+        display: none;
+    }
+    h1{
+        font-weight: 600 !important;
+    }
+   
+   .post-content img{
+        width: 100%;
+        border-radius: 22px;
+    }
+    .card-title a {
+        text-decoration: none;
+        color: #000;
+    }
+    p{
+        font-weight: 300;
+        font-size: 16px;
+        margin-bottom: 1rem;
+    }
+</style>
+
+<body>
+    {%- include navbar.html -%}
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-8  mx-auto">
+                <div class="p-5 post-content">
+                    <h1 class="h1">{{ page.title }}</h1>
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {%- include footer.html -%}
+
+</body>
+
+</html>
