@@ -1,4 +1,6 @@
+
 const PEER_HOST = "serverside-file-share.onrender.com";
+
 let peer = null;
 let connection = null;
 let files = [];
@@ -13,25 +15,20 @@ let currentFileInfo = null;
 let receivedFiles = [];
 let totalTransferProgress = 0;
 let generateShortId_Val = "";
-let connection_input_status = document.getElementById("connection-input-status");
-let connectButtons = document.querySelectorAll(".connectButton");
-let urlParams = new URLSearchParams(window.location.search);
-let connectionId = urlParams.get("connectionId");
-let loader = document.querySelector(".loader")
-let receivedFilesContainer = document.querySelector("#receivedFilesContainer")
-let button = document.createElement("button")
-let fileTransfer = document.querySelector(".add-file-button")
-let processss = document.querySelector("#process")
+let connection_input_status = document.getElementById(
+  "connection-input-status"
+);
+const connectButtons = document.querySelectorAll(".connectButton");
 
+const urlParams = new URLSearchParams(window.location.search);
+const connectionId = urlParams.get("connectionId");
 
-///connnection code 
 // Check if connectionId exists and autofill the input field
 async function startPeerConnection() {
   try {
-    // loader.style.display = "flex"
     await initializePeer();
     if (connectionId) {
-      // Automatically connect when peer is ready
+      //   Automatically connect when peer is ready
       peer.on("open", () => {
         connection = peer.connect(connectionId, { reliable: true });
         handleConnection(connection);
@@ -41,6 +38,7 @@ async function startPeerConnection() {
     console.error("Error initializing peer connection:", e);
   }
 }
+
 connectButtons.forEach((button) => {
   button.addEventListener("click", () => {
     connectToPeer();
@@ -52,9 +50,16 @@ function removeQueryParams() {
   window.history.replaceState({}, document.title, urlWithoutParams);
 }
 
+let dBTN = document.getElementById('dBTN')
+
 if (connectionId) {
-  startPeerConnection();
+  console.log('yes there is a connection id ')
+  dBTN.style.display = 'flex'
 }
+
+dBTN.addEventListener('click', () => {
+  startPeerConnection();
+})
 
 function showConnectionModal(connectionId) {
   // Create modal HTML structure
@@ -101,6 +106,14 @@ function showConnectionModal(connectionId) {
   });
 }
 
+// Function to close the modal
+// function closeModal() {
+//   const modal = document.getElementById("connectionModal");
+//   if (modal) {
+//     modal.remove();
+//   }
+// }
+
 function closeModal() {
   const modal = document.querySelector(".modal-overlay");
   if (modal) modal.remove();
@@ -108,7 +121,6 @@ function closeModal() {
 
 // Initialize everything
 function initializePeer() {
-  document.getElementById("connectionId").textContent = "..."
   peer = new Peer(generateShortId(), {
     host: PEER_HOST,
     port: 443,
@@ -120,7 +132,6 @@ function initializePeer() {
   peer.on("connection", handleConnection);
   peer.on("error", onPeerError);
   peer.on("disconnected", onPeerDisconnected);
-
 
   generateShareLink();
 }
@@ -167,6 +178,7 @@ function connectToPeer() {
 
 function handleConnection(conn) {
   connection = conn;
+
   conn.on("open", () => {
     updateStatus("Connected to peer", "success");
     startFileTransfer();
@@ -174,17 +186,15 @@ function handleConnection(conn) {
     closeModal();
   });
 
-
   conn.on("data", onDataReceived);
   conn.on("close", onConnectionClose);
   conn.on("error", (error) =>
     updateStatus(`Connection error: ${error.message}`, "error")
   );
-
-
 }
 
 // generate qr code
+
 function generateQRCode() {
   const qrContainer = document.createElement("div");
   qrContainer.id = "qrcode";
@@ -204,10 +214,6 @@ function showConnectedUi() {
 }
 
 function onDataReceived(data) {
-  
- 
-  fileTransfer.style.display = "none"
- 
   if (data.type === "file-info") {
     currentFileInfo = data;
     prepareFileReception(data);
@@ -220,19 +226,11 @@ function onDataReceived(data) {
       fileName: currentFileInfo.name,
       fileIndex: currentFileInfo.index,
     });
-   
     completeFileReception();
-  } 
-  else if (data.type === "all-files-complete") {
+  } else if (data.type === "all-files-complete") {
     (document.getElementById("progressContainer").style.display = "none"),
       resetTransfer();
     updateStatus("All files received successfully!", "success");
-
-    // button.addEventListener("click",()=>{
-      fileTransfer.style.display = "flex"
-
-    // })
-    
   } else if (data.type === "progress-update") {
     updateProgress(data.progress, data.receivedSize, data.totalSize);
     const chunkInfo = data.currentChunk
@@ -240,9 +238,7 @@ function onDataReceived(data) {
       : "";
     updateStatus(`Sending ${data.fileName}...`, "success");
   }
-  
 }
-
 
 function onConnectionClose() {
   updateStatus("Connection closed", "warning");
@@ -437,7 +433,6 @@ function formatFileSize(size) {
 }
 
 function sendNextFile() {
- 
   if (currentFileIndex >= files.length) {
     connection.send({ type: "all-files-complete" });
     resetTransfer();
@@ -524,6 +519,17 @@ function receiveFileChunk(data) {
 }
 
 function completeFileReception() {
+  const blob = new Blob(receivedChunks);
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = currentFileInfo.name;
+  a.style.display = "none";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+
   receivedFiles.push(currentFileInfo.name);
   updateStatus(
     `File received successfully: ${currentFileInfo.name}`,
@@ -531,29 +537,16 @@ function completeFileReception() {
   );
   displayReceivedFiles();
 
-  button.addEventListener("click", () => {
-    fileTransfer.style.display = "flex"
+  // Reset for next file
+  receivedChunks = [];
+  receivedSize = 0;
 
-    const blob = new Blob(receivedChunks);
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = currentFileInfo.name;
-    a.style.display = "none";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-
-    // Reset for next file
-    receivedChunks = [];
-    receivedSize = 0;
-
-    // Add this: Send confirmation back to sender when this was the last file
-    if (currentFileInfo.index === currentFileInfo.totalFiles - 1) {
-      connection.send({ type: "all-files-complete" });
-    }
-  })
+  // Add this: Send confirmation back to sender when this was the last file
+  if (currentFileInfo.index === currentFileInfo.totalFiles - 1) {
+    alert("sf")
+    
+    connection.send({ type: "all-files-complete" });
+  }
 }
 
 function displayReceivedFiles() {
@@ -573,7 +566,6 @@ function resetUI() {
   document.getElementById("fileInfo").innerHTML = "";
 }
 
-document.getElementById("status").textContent = "..."
 function updateStatus(message, type) {
   const statusElement = document.getElementById("status");
   statusElement.textContent = message;
