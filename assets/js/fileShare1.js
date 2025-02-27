@@ -495,62 +495,102 @@ function sendNextChunk(file) {
 }
 
 function prepareFileReception(fileInfo) {
-  receivedSize = 0;
-  receivedChunks = new Array(fileInfo.totalChunks);
-  updateFileInfo();
-  updateStatus(
-    `Receiving ${fileInfo.name} (${fileInfo.index + 1}/${fileInfo.totalFiles
-    })...`,
-    "success"
-  );
-  document.getElementById("progressContainer").style.display = "block";
-}
+    // Initialize variables for new file
+    currentFileInfo = fileInfo;
+    receivedSize = 0;
+    
+    // Create array with exact size needed for chunks
+    receivedChunks = new Array(fileInfo.totalChunks).fill(undefined);
+    
+    // Update UI
+    updateFileInfo();
+    updateStatus(
+      `Receiving ${fileInfo.name} (${fileInfo.index + 1}/${fileInfo.totalFiles})...`,
+      "success"
+    );
+    document.getElementById("progressContainer").style.display = "block";
+  }
 
 function receiveFileChunk(data) {
-  receivedChunks[data.chunkIndex] = data.data;
-  receivedSize += data.data.byteLength;
-  const progress = (receivedSize / currentFileInfo.size) * 100;
-  updateProgress(progress, receivedSize, currentFileInfo.size);
-
-  connection.send({
-    type: "progress-update",
-    progress: progress,
-    receivedSize: receivedSize,
-    totalSize: currentFileInfo.size,
-    fileName: currentFileInfo.name,
-    currentChunk: data.chunkIndex + 1,
-    totalChunks: currentFileInfo.totalChunks,
-  });
-}
-
-function completeFileReception() {
-  const blob = new Blob(receivedChunks);
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = currentFileInfo.name;
-  a.style.display = "none";
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-
-  receivedFiles.push(currentFileInfo.name);
-  updateStatus(
-    `File received successfully: ${currentFileInfo.name}`,
-    "success"
-  );
-  displayReceivedFiles();
-
-  // Reset for next file
-  receivedChunks = [];
-  receivedSize = 0;
-
-  // Add this: Send confirmation back to sender when this was the last file
-  if (currentFileInfo.index === currentFileInfo.totalFiles - 1) {
-    connection.send({ type: "all-files-complete" });
+    // Store the chunk in the correct position
+    receivedChunks[data.chunkIndex] = data.data;
+    receivedSize += data.data.byteLength;
+    
+    // Calculate progress based on received size
+    const progress = (receivedSize / currentFileInfo.size) * 100;
+    updateProgress(progress, receivedSize, currentFileInfo.size);
+  
+    // Send progress update to the sender
+    connection.send({
+      type: "progress-update",
+      progress: progress,
+      receivedSize: receivedSize,
+      totalSize: currentFileInfo.size,
+      fileName: currentFileInfo.name,
+      currentChunk: data.chunkIndex + 1,
+      totalChunks: currentFileInfo.totalChunks,
+    });
+    
+    // Check if all chunks have been received
+    const allChunksReceived = receivedChunks.every(chunk => chunk !== undefined);
+    const expectedSize = receivedChunks.reduce((total, chunk) => total + (chunk ? chunk.byteLength : 0), 0);
+    
+    // If we have all chunks and the size matches, complete the file
+    if (allChunksReceived && expectedSize === currentFileInfo.size) {
+      completeFileReception();
+    }
   }
-}
+  function completeFileReception() {
+    // Filter out any undefined chunks (should not happen, but for safety)
+    const validChunks = receivedChunks.filter(chunk => chunk !== undefined);
+    
+    // Check if we have all chunks
+    if (validChunks.length !== currentFileInfo.totalChunks) {
+      updateStatus(`Error: Missing chunks for ${currentFileInfo.name}`, "error");
+      return;
+    }
+    
+    // Create blob from all chunks
+    const blob = new Blob(validChunks);
+    
+    // Verify file size
+    if (blob.size !== currentFileInfo.size) {
+      updateStatus(`Error: File size mismatch for ${currentFileInfo.name}`, "error");
+      return;
+    }
+    
+    // Create download link
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = currentFileInfo.name;
+    a.style.display = "none";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  
+    // Update UI
+    receivedFiles.push(currentFileInfo.name);
+    updateStatus(`File received successfully: ${currentFileInfo.name}`, "success");
+    displayReceivedFiles();
+  
+    // Send confirmation to sender
+    connection.send({
+      type: "file-received-confirmation",
+      fileName: currentFileInfo.name,
+      fileIndex: currentFileInfo.index,
+    });
+  
+    // Reset for next file
+    receivedChunks = [];
+    receivedSize = 0;
+  
+    // Send completion message if this was the last file
+    if (currentFileInfo.index === currentFileInfo.totalFiles - 1) {
+      connection.send({ type: "all-files-complete" });
+    }
+  }
 
 function displayReceivedFiles() {
   const receivedList = document.getElementById("receivedFiles");

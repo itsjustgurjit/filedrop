@@ -231,7 +231,14 @@ progress::-webkit-progress-value {
   height: 80px;
   overflow-y: scroll;
   list-style: none;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
+
+#receivedFiles::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 
 #status {
   margin-top: 20px;
