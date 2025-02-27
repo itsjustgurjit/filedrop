@@ -270,7 +270,6 @@ function generateShareLink() {
   return link;
 }
 function onFilesSelected(e) {
-  initializePeer();
   files = Array.from(e.target.files);
   if (files.length > 0) {
     updateFileInfo();
@@ -629,4 +628,5 @@ function updateProgress(progress, currentSize, totalSize) {
 }
 
 // Initialize everything
+initializePeer();
 setupEventListeners();
