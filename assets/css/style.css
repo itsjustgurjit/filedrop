@@ -593,13 +593,18 @@ footer {
   font-weight: 600;
   margin-bottom: 1rem;
 }
+.add-file-button{
+  margin-top: 3rem;
+}
 
 
 @media (max-width: 768px) {
   .container {
     padding: 10px;
   }
-
+  .add-file-button{
+    margin-top: 1rem;
+  }
   .main-heading {
     font-size: 1.8rem;
     font-weight: 400;
