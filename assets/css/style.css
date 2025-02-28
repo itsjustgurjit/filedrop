@@ -682,7 +682,7 @@ footer {
   overflow-y: scroll; /* Keep scroll functionality */
   min-height: 0px;
   max-height: 170px;
-  scrollbar-width: none; /* For Firefox */
+  scrollbar-width: none; 
 }
 
 #fileInfo::-webkit-scrollbar {
