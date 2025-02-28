@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -60,7 +60,12 @@ body {
   transform: translateX(-50%);
   width: 200vw;
   height: 100vh;
-  background: radial-gradient(ellipse at center, rgb(255 255 255) 32%, #d4ff29 39%, #000000 63%);
+  background: radial-gradient(
+    ellipse at center,
+    rgb(255 255 255) 32%,
+    #d4ff29 39%,
+    #000000 63%
+  );
   pointer-events: none;
   z-index: -1;
   max-width: 100vw;
@@ -228,17 +233,23 @@ progress::-webkit-progress-value {
 }
 
 #receivedFiles {
-  height: 80px;
+  margin-top: 2rem;
+  padding: 0;
+  text-align: left;
+  min-height: 0px;
+  max-height: 80px;
   overflow-y: scroll;
   list-style: none;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+#receivedFiles li {
+  padding-bottom: 1rem;
+}
 
 #receivedFiles::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
-
 
 #status {
   margin-top: 20px;
@@ -531,7 +542,6 @@ progress::-webkit-progress-value {
 }
 
 .howto-steps {
-  
   background-color: #dbff4b;
   color: #000;
   border-radius: 12px;
@@ -547,21 +557,21 @@ progress::-webkit-progress-value {
 }
 
 /* feature highlights css */
-.feature-highlights{
+.feature-highlights {
   margin: 5rem 0;
 }
-.feature-title{
+.feature-title {
   font-size: 20px;
   font-weight: 700;
 }
-.feature-description{
+.feature-description {
   font-weight: 300;
 }
 /* faqs css */
 .faq_wrapper {
   backdrop-filter: blur(10px);
   text-align: left;
-  background-color:#ffffff1a;
+  background-color: #ffffff1a;
   color: #fff;
   padding: 1rem;
   margin: 1rem 0;
@@ -593,16 +603,15 @@ footer {
   font-weight: 600;
   margin-bottom: 1rem;
 }
-.add-file-button{
+.add-file-button {
   margin-top: 3rem;
 }
-
 
 @media (max-width: 768px) {
   .container {
     padding: 10px;
   }
-  .add-file-button{
+  .add-file-button {
     margin-top: 1rem;
   }
   .main-heading {
@@ -630,4 +639,52 @@ footer {
     font-weight: 600;
     width: 100%;
   }
+}
+
+.download-close {
+  text-align: right;
+  cursor: pointer;
+  font-size: 24px;
+  position: absolute;
+  right: 15px;
+  top: 0px;
+  font-size: 35px;
+}
+#receivedFilesContainer {
+  display: none;
+  background: rgba(255, 255, 255);
+  border-radius: 26px;
+  padding: 20px;
+  color: black;
+  border: 3px solid #dbff4b;
+  /* position: absolute; */
+  max-width: 467px;
+  backdrop-filter: blur(4px);
+  width: 400px;
+  text-align: center;
+  margin: 1rem auto;
+}
+#dBTN {
+  margin: auto;
+  display: none;
+
+  align-items: center;
+  background: #dbff4b;
+  border-radius: 100px;
+  padding: 8px 2rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#fileInfo {
+  overflow-y: scroll; /* Keep scroll functionality */
+  min-height: 0px;
+  max-height: 170px;
+  scrollbar-width: none; /* For Firefox */
+}
+
+#fileInfo::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
 }

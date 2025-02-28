@@ -2,12 +2,6 @@
 <html lang="en">
 
 {%- include head.html -%}
-
-<style>
-     #dBTN {
-        display: none;
-    }
-</style>
 <body>
     {%- include navbar.html -%}
 
@@ -15,7 +9,7 @@
         <h1 class="main-heading">{{pageData.h1}}</h1>
         <h2 class="subtitle">{{pageData.h2}}</h2>
 
-       
+
         <div class="connection-info" style="display: none;">
             <p>YOUR ID:</p>
             <div id="connectionId"></div>
@@ -32,13 +26,14 @@
                 <progress id="progress" max="100" value="0"></progress>
                 <div id="transferStatus"></div>
             </div>
-            <button id="dBTN">download file in reciver</button>
-
+            
         </div>
 
         <div id="receivedFilesContainer">
-            <h3></h3>
+            <div class="download-close">×</div>
             <ul id="receivedFiles"></ul>
+            <p class="mt-4 completed">Do you want to download incoming files?</p>
+            <button class="btn" id="dBTN">Download</button>
         </div>
         <div class="receiver-card" id="connection-input-status">
             <h3>Receiving a file?</h3>
@@ -56,7 +51,7 @@
             <a id="shareLink" href="#">Click to copy link</a>
         </div>
     </div>
-   
+
     <div class="container-fluid" style="background: black;">
         <div class="container">
             {%- include how-to.html -%}
