@@ -123,11 +123,6 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.add-file-button:hover {
-  scale: 1.02;
-  transition: all 0.1s ease-in-out;
-}
-
 .add-file-button::before {
   content: "+";
   display: flex;
@@ -546,15 +541,26 @@ progress::-webkit-progress-value {
   color: #000;
   border-radius: 12px;
   padding: 1rem;
-  width: 300px;
+  width: 300px; /* Keeps it the same on PC */
+  text-align: left;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .howto-content {
-  justify-content: center;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-  text-align: left;
+  justify-content: center; /* Keeps PC layout the same */
 }
+
+@media (max-width: 768px) { /* Mobile-friendly layout */
+  .howto-steps {
+    width: 100%; /* Full width on small screens */
+    max-width: 350px; /* Slightly bigger for mobile */
+    text-align: center;
+  }
+}
+
 
 /* feature highlights css */
 .feature-highlights {
@@ -739,10 +745,6 @@ footer {
 }
 .faq_wrapper p {
   font-weight: 600;
-}
-.howto-steps:nth-of-type(2) {
-  scale: 1.2;
-  box-shadow: 0px 2px 5px 1px #00000014;
 }
 
 .file-share-container::before {
