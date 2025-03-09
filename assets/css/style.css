@@ -688,7 +688,7 @@ footer {
   display: none; /* For Chrome, Safari, and Opera */
 }
 
-/* white */
+/* white background extra code*/
 .nav {
   filter: invert(1) brightness(0.1);
 }
@@ -731,7 +731,7 @@ footer {
 }
 
 .container-fluid {
-  background: rgba(255, 255, 255, 0.096) !important;
+  background: rgba(255, 255, 255, 0) !important;
   color: black;
 }
 .faq_wrapper {
@@ -743,9 +743,6 @@ footer {
 .howto-steps:nth-of-type(2) {
   scale: 1.2;
   box-shadow: 0px 2px 5px 1px #00000014;
-}
-.bottom-footer {
-  display: none;
 }
 
 .file-share-container::before {
@@ -765,4 +762,18 @@ footer {
 .connectButton:hover {
   box-shadow: rgba(82, 82, 82, 0.075) 1px 2px 5px;
   background: rgb(0, 0, 0);
+}
+
+footer{
+  background-color: #dbff4b;
+}
+
+.bottom-footer {
+  /* display: none; */
+}
+.footer-link{
+  color: #000;
+}
+.navbar-brand img{
+  filter: brightness(0.0);
 }

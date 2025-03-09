@@ -525,11 +525,14 @@ function prepareFileReception(fileInfo) {
 
   // Create array with exact size needed for chunks
   receivedChunks = new Array(fileInfo.totalChunks).fill(undefined);
-
+  const shortFileName = fileInfo.name.length > 30 ? fileInfo.name.slice(0, 30) + "..." : fileInfo.name;
+  console.log(shortFileName);
+  
   // Update UI
   updateFileInfo();
   updateStatus(
-    `Receiving ${fileInfo.name} (${fileInfo.index + 1}/${fileInfo.totalFiles})...`,
+    
+    `Receiving ${shortFileName} (${fileInfo.index + 1}/${fileInfo.totalFiles})...`,
     "success"
   );
   document.getElementById("progressContainer").style.display = "block";
