@@ -559,6 +559,12 @@ progress::-webkit-progress-value {
     max-width: 350px; /* Slightly bigger for mobile */
     text-align: center;
   }
+  .footer-trademark{
+    display: block !important;
+  }
+  .footer-static-links{
+    display: block !important;
+  }
 }
 
 
