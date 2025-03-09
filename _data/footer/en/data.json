@@ -3,22 +3,22 @@
     "description": "Webzify is a free online service that offers a collection of web-based tools. These tools are designed to simplify your work and help you improve your website without any cost to you.",
     "social": [
       {
-        "logo": "/assets/images/facebook.svg",
+        "logo": "/assets/images/social-images/facebook-filetransfer-com.svg",
         "url": "https://www.facebook.com",
         "title": "facebook"
       },
       {
-        "logo": "/assets/images/twitter.svg",
+        "logo": "/assets/images/social-images/twitter-154-filetransfer-com.svg",
         "url": "https://twitter.com",
         "title": "twitter"
       },
       {
-        "logo": "/assets/images/instagram.svg",
+        "logo": "/assets/images/social-images/instagram-with-circle-fileshare-com.svg",
         "url": "https://www.instagram.com/webzify_onlinetools/",
         "title": "instagram"
       },
       {
-        "logo": "/assets/images/linkedin.svg",
+        "logo": "/assets/images/social-images/linkedin-filesharedrop-com.svg",
         "url": "https://linkedin.com",
         "title": "linkedin"
       }

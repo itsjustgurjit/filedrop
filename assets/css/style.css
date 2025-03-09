@@ -785,3 +785,10 @@ footer{
 .navbar-brand img{
   filter: brightness(0.0);
 }
+
+.scroll-top{
+  justify-content: flex-end;
+}
+.step-number{
+  font-size: 3rem;
+}
