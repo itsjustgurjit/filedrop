@@ -27,6 +27,9 @@ body {
 }
 
 .logo {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
   font-family: Bebas Neue;
   font-size: 1.6rem;
 }
@@ -334,7 +337,7 @@ progress::-webkit-progress-value {
   top: 0;
   right: -300px;
   /* Hide initially */
-  width: 250px;
+  width: 320px;
   height: 100%;
   background: #000000fb;
   color: white;

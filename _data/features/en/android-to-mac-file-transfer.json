@@ -1,0 +1,75 @@
+{
+    "Language": "English",
+    "htmlLangAtt": "en",
+    "title": "Share Files from Android to Mac",
+    "meta": "Transfer  files effortlessly with Android to Mac file transfer—fast, secure, and free, with no sign-ups or registrations required.",
+    "h1": "Android to Mac file transfer",
+    "h2": "Send & Receive Large Files – Fast, Secure & Peer-to-Peer Sharing, No Upload, No Signup",
+    "featureHighlights": [
+        {
+            "image": "/assets/images/change-background/change-bg-img.webp",
+            "title": "Effortless File Transfers",
+            "description": [
+                "Send large files quickly and easily—no complicated steps or technical know-how needed."
+            ]
+        },
+        {
+            "image": "/assets/images/change-background/change-bg-img.webp",
+            "title": "100% Free & No Sign-Up Required",
+            "description": [
+                "Transfer huge files without paying a dime or creating an account—just share and go!"
+            ]
+        },
+        {
+            "image": "/assets/images/change-background/change-bg-img.webp",
+            "title": "Direct Peer-to-Peer file Sharing",
+            "description": [
+                "Files move directly between devices without passing through a server, ensuring fast and secure transfers."
+            ]
+        },
+        {
+            "image": "/assets/images/change-background/change-bg-img.webp",
+            "title": "Strong Data Security & Privacy",
+            "description": [
+                "Your files remain private since they are never stored or intercepted by any third-party server."
+            ]
+        },
+        {
+            "image": "/assets/images/change-background/change-bg-img.webp",
+            "title": " No Limits on File Size",
+            "description": [
+                "Send files of any size without restrictions—ideal for videos, images, and large documents."
+            ]
+        },
+        {
+            "image": "/assets/images/change-background/change-bg-img.webp",
+            "title": "Universal Compatibility",
+            "description": [
+                "Works smoothly across all devices and operating systems, including Windows, macOS, Android and iOS."
+            ]
+        }
+    ],
+    "howTo": {
+        "image": "/assets/images/change-background/change-bg-how-to.webp",
+        "heading": "How to send and receive big files from Android to Mac within seconds?",
+        "steps": [
+            "First, upload your large file from Android for end-to-end encryption.",
+            "Within a few seconds, a download link and QR code will be generated.",
+            "Finally, send the link or scan the QR code on your Mac."
+        ]
+    },
+    "faqs": [
+        {
+            "question": "How can i share large files directly from Android to Mac ?",
+            "answer": "you can share big files directly from android to mac by using our file transfer webtool."
+        },
+        {
+            "question": "What will i do if dont have enough storage to receive large files? ",
+            "answer": "No issues! You don't need large storage to receive big files. Simply send and receive large files by sharing links or scanning a code.            "
+        },
+        {
+            "question": "Should I worry about my data privacy and security?",
+            "answer": "No, there is no need to worry about data privacy and security because the entire transfer process is done without involving any third party. "
+        }
+    ]
+}

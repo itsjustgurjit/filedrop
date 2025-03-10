@@ -1,6 +1,6 @@
 {
     "logo": "/logo.svg",
-    "description": "Webzify is a free online service that offers a collection of web-based tools. These tools are designed to simplify your work and help you improve your website without any cost to you.",
+    "description": "We provide the simplest way to transfer your big files without requiring any sign-up.",
     "social": [
       {
         "logo": "/assets/images/facebook.svg",
@@ -24,61 +24,79 @@
       }
     ],
     "company": [
-      
       {
-        "name": "Sitemap Checker",
-        "url": "/sitemap-checker"
+        "name": "Send large files",
+        "url": "/send-large-files"
       },
       {
-        "name": "Slug Generator",
-        "url": "/slug-generator"
+        "name": "Send Files Online",
+        "url": "/send-files-online"
       },
       {
-        "name": "Favicon Checker",
-        "url": "/favicon-checker"
+        "name": "GB File Transfer",
+        "url": "/gb-file-transfer"
       },
       {
-        "name": "Canonical URL Checker",
-        "url": "/canonical-url-checker"
+        "name": "File Transfer",
+        "url": "/file-transfer"
+      },
+      {
+        "name": "File Share",
+        "url": "/file-share"
       }
+     
+    
+     
+     
     ],
     "quickLinks": [
       {
-        "name": "Image to text Converter",
-        "url": "/image-to-text",
-        "icon": "/assets/images/image-to-text.svg"
+        "name": "Android to mac file transfer",
+        "url": "/android-to-mac-file-transfer"
       },
       {
-        "name": "Online Photo Converter",
-        "url": "/photo-converter"
+        "name": "Iphone to windows file transfer",
+        "url": "/iphone-to-windows-file-transfer"
       },
       {
-        "name": "PNG to JPG Converter",
-        "url": "/png-to-jpg"
+        "name": "Mac to android file transfer",
+        "url": "/mac-to-android-file-transfer"
       },
       {
-        "name": "JPG to WEBP Converter",
-        "url": "/jpg-to-webp"
+        "name": "Windows to iphone file transfer ",
+        "url": "/windows-to-iphone-file-transfer"
       }
     ],
     "freeTools": [
      
       {
-        "name": "Text to Handwriting",
-        "url": "/text-to-handwriting"
+        "name": "File Transfer to 2GB",
+        "url": "/file-transfer-to-2gb"
       },
       {
-        "name": "Online Text Compare",
-        "url": "/text-compare"
+        "name": "File Transfer to 3GB",
+        "url": "/file-transfer-to-3gb"
       },
       {
-        "name": "Case Converter",
-        "url": "/case-converter"
+        "name": "File Transfer to 4GB",
+        "url": "/file-transfer-to-4gb"
       },
       {
-        "name": "Word Counter",
-        "url": "/word-count"
+        "name": "File Transfer to 5GB",
+        "url": "/file-transfer-to-5gb"
+      },
+      {
+        "name": "File Transfer to 10GB",
+        "url": "/file-transfer-to-10gb"
+      },
+      {
+        "name": "File Transfer to 20GB",
+        "url": "/file-transfer-to-20gb"
+      },
+      {
+        "name": "File Transfer to 50GB",
+        "url": "/file-transfer-to-50gb"
       }
     ],
-    "message": "© 2024 Webzify. All Right Reserved."
+    "message": "© 2025 filedropshare. All Right Reserved."
   }

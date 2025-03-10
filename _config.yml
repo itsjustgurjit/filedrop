@@ -1,9 +1,9 @@
-name: filetransfer
-title: filetransfer
-email: your-email@filetransfer.com
-description: Webzify is a free online service that offers a collection of web tools. These tools are designed to simplify your work and help you improve your website without any cost to you.
+name: filedropshare
+title: filedropshare
+email: your-email@filedropshare.com
+description: Share files directly, quickly and securely with our free FileDropShare. We provide the simplest way to transfer your big files without requiring any sign-up.
 baseurl: "" 
-url: https://filetransfer.com
+url: https://filedropshare.com
 favicon: /favicon.svg
 permalink: /blog/:title
 paginate: '12'

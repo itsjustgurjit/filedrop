@@ -1,0 +1,79 @@
+{
+    "Language": "English",
+    "htmlLangAtt": "en",
+    "title": "Transfer Files from Mac to Android Online for Free",
+    "meta": "Share files instantly and securely from Mac to Android with Mac to Android File Transfer—no sign-ups, no hassle, just fast and free transfers.",
+    "h1": "Mac to android file transfer",
+    "h2": "Mac to Android File Transfer – Fast, Secure & Peer-to-Peer large files Sharing.",
+    "featureHighlights": [
+        {
+            "image": "/assets/images/change-background/change-bg-img.webp",
+            "title": "Seamless File Sharing",
+            "description": [
+                "Transfer large files effortlessly in just a few clicks—no complex setup required."
+            ]
+        },
+        {
+            "image": "/assets/images/change-background/change-bg-img.webp",
+            "title": "Completely Free",
+            "description": [
+                "Enjoy unlimited file transfers without any fees, sign-ups, or subscriptions."
+            ]
+        },
+        {
+            "image": "/assets/images/change-background/change-bg-img.webp",
+            "title": "Direct Device-to-Device Transfer",
+            "description": [
+                "Send files instantly without uploading on a server—just share a link or scan a QR code."
+            ]
+        },
+        {
+            "image": "/assets/images/change-background/change-bg-img.webp",
+            "title": "Ultimate Privacy Protection",
+            "description": [
+                "Your files stay secure since they never get uploaded or stored on any server."
+            ]
+        },
+        {
+            "image": "/assets/images/change-background/change-bg-img.webp",
+            "title": "Unlimited File Size",
+            "description": [
+                "Share massive files with no restrictions, making it perfect for videos, documents, and more."
+            ]
+        },
+        {
+            "image": "/assets/images/change-background/change-bg-img.webp",
+            "title": " Works on Any Device",
+            "description": [
+                "Send and receive files across Windows, macOS, Android, iOS and other platforms effortlessly."
+            ]
+        }
+    ],
+    "howTo": {
+        "image": "/assets/images/change-background/change-bg-how-to.webp",
+        "heading": "How can you transfer large files, vedios, docs etc from Mac to android?",
+        "steps": [
+            "Go to FileDropShare and click the Add tab to choose a file from your Mac.",
+            "After the file uploads, a unique link and QR code will be generated on your Mac.",
+            "Copy and share the link or scan the QR code on your Android device for a quick transfer."
+        ]
+    },
+    "faqs": [
+        {
+            "question": "Is it mandatory to sign up to transfer even larger files ? ",
+            "answer": "No, there is no need to sign up to transfer large files. We provide all our services absolutely free of cost."
+        },
+        {
+            "question": "How can I share my large docs files from Mac to android?",
+            "answer": "By using our FileDropShare, you can easily share your large document files from Mac to Android. Our web tool supports sharing various types of large files, including videos, pictures and more."
+        },
+        {
+            "question": "How much time does it take to transfer very large files from a laptop to a smartphone?",
+            "answer": "Sharing very large files from a laptop to a smartphone has become very easy and quick with our online file-sharing web tool."
+        },
+        {
+            "question": "Are my files protected and private while sharing?",
+            "answer": "Yes, we ensure 100% protection and privacy for your files while sharing, as we do not upload your files to any server for transfer."
+        }
+    ]
+}
