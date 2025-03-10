@@ -7,42 +7,42 @@
     "h2": "Fast & Secure File Sharing – Peer-to-Peer, No Signup, Just Click, Share & Download",
     "featureHighlights": [
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/users.svg",
             "title": "Quick & Easy Transfers",
             "description": [
                 "Send large files effortlessly with a simple copy-paste link or QR code—no technical skills required!"
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/free.svg",
             "title": "100% Free to Use",
             "description": [
                 "Transfer huge files without any cost, registration, or hidden fees—completely free forever."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/direct.svg",
             "title": "Direct file Sharing",
             "description": [
                 "Your files go directly from sender to receiver without touching any server, ensuring privacy and speed."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/safety.svg",
             "title": "Maximum Security & Privacy",
             "description": [
                 "Since we don’t store files on a server, your data remains private and secure at all times.                "
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/nofilesizelimit.svg",
             "title": "No File Size Limit",
             "description": [
                 "Share files of any size without restrictions—perfect for videos, images, and large documents."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/devices.svg",
             "title": "Cross-Platform Compatibility",
             "description": [
                 "Send and receive files between any device—Windows, macOS, iOS, Android, and more! "

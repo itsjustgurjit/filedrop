@@ -7,42 +7,42 @@
     "h2": "iPhone to Windows File Transfer – Send Large Files Fast, Secure & Wireless",
     "featureHighlights": [
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+            "image": "/assets/images/feature-highlight-images/free.svg",
             "title": "Fast & Hassle-Free Transfers",
             "description": [
                 "Send large files in seconds with just a link or QR code—no complicated steps!"
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
-            "title": "Free, No Sign-Up Needed",
+            "image": "/assets/images/feature-highlight-images/signup.svg",
+            "title": "No Sign-Up Needed",
             "description": [
                 "Enjoy unlimited file sharing without any fees, accounts, or hidden costs."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+            "image": "/assets/images/feature-highlight-images/direct.svg",
             "title": "Direct Device-to-Device Sharing",
             "description": [
                 "Your files go straight from sender to receiver—no middleman, no storage, just instant delivery."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/safety.svg",
             "title": " 100% Secure & Private",
             "description": [
                 "Since files never touch a server, your data stays completely safe and confidential."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/nofilesizelimit.svg",
             "title": "No File Size Restrictions",
             "description": [
                 "Share massive files with ease—perfect for videos, photos, documents, and more."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/devices.svg",
             "title": "Works on Any Device",
             "description": [
                 "Transfer files seamlessly between Windows, macOS, iOS, Android, and more."

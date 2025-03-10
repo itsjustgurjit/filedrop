@@ -7,42 +7,42 @@
     "h2": "Send & Receive GB Files in Few Steps – Choose, Share Link, Download",
     "featureHighlights": [
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/fast.svg",
             "title": "Quick & Easy",
             "description": [
                 "Send large files instantly with just a link or QR code—no hassle."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/free.svg",
             "title": "100% Free",
             "description": [
                 "No fees, no subscriptions, no accounts—just share files."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/direct.svg",
             "title": "Super Fast",
             "description": [
                 "Direct peer-to-peer transfers for maximum speed, no delays."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/safety.svg",
             "title": "Fully Secure",
             "description": [
                 "Files never touch a server, ensuring total privacy."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/nofilesizelimit.svg",
             "title": "No Limits",
             "description": [
                 "Send files of any size without restrictions or storage limits."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/devices.svg",
             "title": "All Devices Supported",
             "description": [
                 "Seamlessly transfer files across Windows, macOS, Android, and iOS."

@@ -7,42 +7,42 @@
     "h2": "Send & Receive Large Files – Fast, Secure & Peer-to-Peer Sharing, No Upload, No Signup",
     "featureHighlights": [
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/users.svg",
             "title": "Effortless File Transfers",
             "description": [
                 "Send large files quickly and easily—no complicated steps or technical know-how needed."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/signup.svg",
             "title": "100% Free & No Sign-Up Required",
             "description": [
                 "Transfer huge files without paying a dime or creating an account—just share and go!"
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/direct.svg",
             "title": "Direct Peer-to-Peer file Sharing",
             "description": [
                 "Files move directly between devices without passing through a server, ensuring fast and secure transfers."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/safety.svg",
             "title": "Strong Data Security & Privacy",
             "description": [
                 "Your files remain private since they are never stored or intercepted by any third-party server."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/nofilesizelimit.svg",
             "title": " No Limits on File Size",
             "description": [
                 "Send files of any size without restrictions—ideal for videos, images, and large documents."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/devices.svg",
             "title": "Universal Compatibility",
             "description": [
                 "Works smoothly across all devices and operating systems, including Windows, macOS, Android and iOS."

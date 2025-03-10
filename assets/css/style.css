@@ -10,7 +10,7 @@
 
 body {
   font-family: "Poppins", serif;
-  background: black;
+  background: rgb(255, 255, 255);
   min-height: 100vh;
   color: white;
 }
@@ -126,11 +126,6 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.add-file-button:hover {
-  scale: 1.02;
-  transition: all 0.1s ease-in-out;
-}
-
 .add-file-button::before {
   content: "+";
   display: flex;
@@ -196,6 +191,7 @@ progress::-webkit-progress-value {
   margin-bottom: 20px;
   text-align: center;
   font-weight: 600;
+  font-size: 23px;
 }
 
 .connection-input {
@@ -206,7 +202,7 @@ progress::-webkit-progress-value {
 
 #peerIdInput {
   flex: 1;
-  padding: 18px;
+  padding: 13px;
   border: 1px solid #444;
   border-radius: 17px;
   font-size: 1.08rem;
@@ -236,7 +232,7 @@ progress::-webkit-progress-value {
 }
 
 #receivedFiles {
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   padding: 0;
   text-align: left;
   min-height: 0px;
@@ -337,7 +333,7 @@ progress::-webkit-progress-value {
   top: 0;
   right: -300px;
   /* Hide initially */
-  width: 320px;
+  width: 250px;
   height: 100%;
   background: #000000fb;
   color: white;
@@ -549,15 +545,44 @@ progress::-webkit-progress-value {
   color: #000;
   border-radius: 12px;
   padding: 1rem;
-  width: 300px;
+  width: 300px; /* Keeps it the same on PC */
+  text-align: left;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .howto-content {
-  justify-content: center;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-  text-align: left;
+  justify-content: center; /* Keeps PC layout the same */
 }
+
+@media (max-width: 768px) { /* Mobile-friendly layout */
+
+  #receivedFilesContainer{
+    width: 100% !important;
+  }
+  .howto-steps {
+    width: 100%; /* Full width on small screens */
+    max-width: 350px; /* Slightly bigger for mobile */
+    text-align: center;
+  }
+  .footer-trademark{
+    display: flex !important;
+    flex-direction: column;
+    align-items: start !important;
+  }
+  .footer-static-links{
+    display: flex !important;
+    flex-direction: column;
+    /* margin-top: 1rem; */
+  }
+  .trademark-message{
+    margin-top: 1rem;
+    order: 2;
+  }
+}
+
 
 /* feature highlights css */
 .feature-highlights {
@@ -577,7 +602,7 @@ progress::-webkit-progress-value {
   background-color: #ffffff1a;
   color: #fff;
   padding: 1rem;
-  margin: 1rem 0;
+  margin: 0rem 0;
   border-radius: 12px;
 }
 
@@ -609,8 +634,17 @@ footer {
 .add-file-button {
   margin-top: 3rem;
 }
+.footer-section{
+  padding: 3rem;
+}
 
 @media (max-width: 768px) {
+  footer {
+    padding: 3rem 0;
+  }
+  .footer-section{
+    padding: 0px;
+  }
   .container {
     padding: 10px;
   }
@@ -645,6 +679,7 @@ footer {
 }
 
 .download-close {
+  box-shadow: -10px 10px 10px 10px white;
   text-align: right;
   cursor: pointer;
   font-size: 24px;
@@ -652,6 +687,7 @@ footer {
   right: 15px;
   top: 0px;
   font-size: 35px;
+  height: 25px;
 }
 #receivedFilesContainer {
   display: none;
@@ -670,7 +706,6 @@ footer {
 #dBTN {
   margin: auto;
   display: none;
-
   align-items: center;
   background: #dbff4b;
   border-radius: 100px;
@@ -685,9 +720,122 @@ footer {
   overflow-y: scroll; /* Keep scroll functionality */
   min-height: 0px;
   max-height: 170px;
-  scrollbar-width: none; 
+  scrollbar-width: none; /* For Firefox */
 }
 
 #fileInfo::-webkit-scrollbar {
   display: none; /* For Chrome, Safari, and Opera */
+}
+
+/* white background extra code*/
+.nav {
+  filter: invert(1) brightness(0.1);
+}
+.main-heading {
+  color: black;
+}
+.add-file-button {
+  color: white !important;
+  background-color: black;
+}
+
+.file-share-container::before {
+  content: "";
+  position: fixed;
+  bottom: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200vw;
+  height: 100vh;
+  background: radial-gradient(
+    ellipse at center,
+    #e7ff88 32%,
+    #d4ff29 39%,
+    #ffffff 63%
+  );
+  pointer-events: none;
+  z-index: -1;
+  max-width: 100vw;
+  filter: blur(29px);
+  opacity: 1;
+  transition: max-width 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.add-file-button {
+  box-shadow: 1px 24px 285px 10px #dbff4c;
+}
+.connectButton {
+  background: black;
+  color: white;
+}
+
+.container-fluid {
+  background: rgba(255, 255, 255, 0) !important;
+  color: black;
+}
+.faq_wrapper {
+  color: black;
+}
+.faq_wrapper p:first-child {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.faq_wrapper p:nth-child(2){
+  font-size: 16px !important;
+  color: red;
+}
+
+.file-share-container::before {
+  max-width: var(--max-width, 100vw);
+  opacity: var(--opacity, 1);
+}
+.menu {
+  background: white;
+  box-shadow: -3px 0 13px 1px rgb(0 0 0 / 4%);
+}
+.menu a {
+  color: black;
+}
+.menu-close{
+  color: black;
+}
+.connectButton:hover {
+  box-shadow: rgba(82, 82, 82, 0.075) 1px 2px 5px;
+  background: rgb(0, 0, 0);
+}
+
+footer{
+  background-color: #dbff4b;
+}
+
+.bottom-footer {
+  /* display: none; */
+}
+.footer-link{
+  color: #000;
+}
+.navbar-brand img{
+  filter: brightness(0.0);
+}
+
+.scroll-top{
+  justify-content: flex-end;
+}
+.step-number{
+  font-size: 3rem;
+}
+.scroll-top {
+  position: fixed;
+  bottom: 15px;
+  z-index: 99;
+  right: 50px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+  border-radius: 50px;
 }

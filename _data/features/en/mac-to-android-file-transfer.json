@@ -7,42 +7,42 @@
     "h2": "Mac to Android File Transfer – Fast, Secure & Peer-to-Peer large files Sharing.",
     "featureHighlights": [
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/fast.svg",
             "title": "Seamless File Sharing",
             "description": [
                 "Transfer large files effortlessly in just a few clicks—no complex setup required."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/free.svg",
             "title": "Completely Free",
             "description": [
                 "Enjoy unlimited file transfers without any fees, sign-ups, or subscriptions."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/direct.svg",
             "title": "Direct Device-to-Device Transfer",
             "description": [
                 "Send files instantly without uploading on a server—just share a link or scan a QR code."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/safety.svg",
             "title": "Ultimate Privacy Protection",
             "description": [
                 "Your files stay secure since they never get uploaded or stored on any server."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/nofilesizelimit.svg",
             "title": "Unlimited File Size",
             "description": [
                 "Share massive files with no restrictions, making it perfect for videos, documents, and more."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/devices.svg",
             "title": " Works on Any Device",
             "description": [
                 "Send and receive files across Windows, macOS, Android, iOS and other platforms effortlessly."

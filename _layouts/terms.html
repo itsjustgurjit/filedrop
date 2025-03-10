@@ -3,48 +3,102 @@
 
 {%- include head.html -%}
 
+
+<style>
+    h1,
+    h2 {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    p,
+    h1,
+    h2,
+    ul,
+    li {
+        color: black
+    }
+</style>
 <body>
     {%- include navbar.html -%}
 
     <div class="container my-5">
-       <div class="row">
-        <div class="col-md-10 mx-auto">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <h1 class="mb-3" style="font-size: 30px">Terms and condition</h1>
-                    <p>
-                        I was sitting next to a colleague at work.
-                        We had to meet a tight deadline, and in order to finish our work he had to share a large file with me.
-                        </p>
-                       <p> The file was too large to email, we didn't have a USB stick with us, and only one of us had a MacBook, so we couldn't use AirDrop. Ultimately, the file had to be split and sent via WeTransfer.
-                    </p>
-                    <p>
-                        I was sitting next to a colleague at work.
-                        We had to meet a tight deadline, and in order to finish our work he had to share a large file with me.
-                        </p>
-                       <p> The file was too large to email, we didn't have a USB stick with us, and only one of us had a MacBook, so we couldn't use AirDrop. Ultimately, the file had to be split and sent via WeTransfer.
-                    </p>
-                    <p>
-                        I was sitting next to a colleague at work.
-                        We had to meet a tight deadline, and in order to finish our work he had to share a large file with me.
-                        </p>
-                       <p> The file was too large to email, we didn't have a USB stick with us, and only one of us had a MacBook, so we couldn't use AirDrop. Ultimately, the file had to be split and sent via WeTransfer.
-                    </p>
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="container">
+                            <h1 style="font-size: 30px; font-weight: 600">Terms of Service</h1>
+                            <br>
 
-                    <p>
-                        It was an incredibly frustrating experience. I could give my colleague a toffee from a bowl on the table, but the only way I could send him a file was by literally sending it to another continent first.</p>
+                            <h2>1. Acceptance of Terms</h2>
+                            <p>By accessing or using our website, you acknowledge that you have read, understood, and
+                                agree to be bound by these Terms. If you do not agree, you must not use our services.
+                            </p>
+
+                            <h2>2. Description of Service</h2>
+                            <p>Filedropshare provides a peer-to-peer (P2P) file-sharing service that allows users to
+                                share files directly without server storage. We do not store or monitor files shared
+                                through our platform.</p>
+
+                            <h2>3. User Responsibilities</h2>
+                            <ul>
+                                <li>Use the service only for lawful purposes.</li>
+                                <li>Not upload, share, or distribute any illegal, harmful, or copyrighted content
+                                    without proper authorization.</li>
+                                <li>Assume full responsibility for the content you share.</li>
+                                <li>Not attempt to disrupt, abuse, or interfere with the service.</li>
+                            </ul>
+
+                            <h2>4. Privacy and Security</h2>
+                            <p>We prioritize user privacy and security. Since our service is P2P, we do not store files
+                                on our servers. However, you are responsible for ensuring the safety and security of the
+                                files you share. We recommend avoiding sharing sensitive or confidential information
+                                through our platform.</p>
+
+                            <h2>5. Prohibited Activities</h2>
+                            <ul>
+                                <li>Sharing illegal or copyrighted content without permission.</li>
+                                <li>Using the service for hacking, spamming, or distributing malware.</li>
+                                <li>Violating any applicable laws or regulations.</li>
+                                <li>Attempting to reverse-engineer, modify, or exploit the platform.</li>
+                            </ul>
+
+                            <h2>6. Limitation of Liability</h2>
+                            <p>Filedropshare is not responsible for:</p>
+                            <ul>
+                                <li>Any loss, damage, or liability resulting from the use of our service.</li>
+                                <li>Unauthorized access to files shared via our platform.</li>
+                                <li>Any service interruptions, errors, or technical issues.</li>
+                            </ul>
+
+                            <h2>7. Termination</h2>
+                            <p>We reserve the right to terminate or suspend access to our services at our discretion,
+                                without prior notice, if we find a user violating these Terms.</p>
+
+                            <h2>8. Changes to Terms</h2>
+                            <p>We may update these Terms at any time. Continued use of the service after modifications
+                                implies acceptance of the revised Terms.</p>
+
+                            <h2>9. Contact Us</h2>
+                            <p>If you have any questions or concerns regarding these Terms, please contact us at <a
+                                    href="mailto:filedropsharewebsite@gmail.com">filedropsharewebsite@gmail.com</a>.</p>
+
+                            <p>By using our service, you agree to these Terms and acknowledge your responsibility in
+                                using our platform responsibly.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-       </div>
-    </div>
-    {%- include footer.html -%}
+        </div>
+        {%- include footer.html -%}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.4.7/peerjs.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script src="/assets/js/nav.js"></script>
-    <script src="/assets/js/fileShare.js"></script>
-    <script src="/assets/js/modal.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.4.7/peerjs.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+        <script src="/assets/js/nav.js"></script>
+        <script src="/assets/js/fileShare.js"></script>
+        <script src="/assets/js/modal.js"></script>
 </body>
 
 </html>

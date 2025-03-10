@@ -1,14 +1,15 @@
 {%- if pageData.howTo.size > 0 -%}
 <div class="howto my-5">
-    <h3 class="howto-title pt-4">{{pageData.howTo.heading}}</h3>
-    <div class="howto-content pt-4">
-        {%- for data in pageData.howTo.steps -%}
-        <div class="howto-steps">
-            <p> <b style="color: #000">{{forloop.index}}</b>.
-                {{data}}</p>
-        </div>
-        {%- endfor -%}
+  <h3 class="howto-title pt-4">{{pageData.howTo.heading}}</h3>
 
+  <div class="howto-content d-flex flex-wrap justify-content-center pt-4">
+    {%- for data in pageData.howTo.steps -%}
+    <div class="howto-steps">
+      <p class="mb-0">
+        <b class="step-number d-block">{{ forloop.index }}</b>{{ data }}
+      </p>
     </div>
+    {%- endfor -%}
+  </div>
 </div>
 {%- endif -%}

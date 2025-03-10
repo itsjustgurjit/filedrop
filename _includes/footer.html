@@ -3,51 +3,16 @@
 
 <footer class="mt-5 bottom-footer">
   <div class="container-lg">
-    <div class="footer-section px-5">
+    <div class="footer-section">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-3">
             <div class="footer-logo">
-              <a class="logo" href="/">
-                <svg height="30px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50"
-                    style="enable-background:new 0 0 50 50;" xml:space="preserve">
-                    <style type="text/css">
-                        .st0 {
-                            fill: url(#SVGID_1_);
-                        }
-    
-                        .st1 {
-                            fill: url(#SVGID_2_);
-                        }
-                    </style>
-                    <g>
-                        <g>
-    
-                            <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="15.16" y1="18.435" x2="47.98"
-                                y2="18.435" gradientTransform="matrix(1 0 0 -1 0 50)">
-                                <stop offset="0" style="stop-color:#FFFFFF" />
-                                <stop offset="1" style="stop-color:#D9E149" />
-                            </linearGradient>
-                            <path class="st0" d="M48,15.1V48H36.5V30.3c-5.8,3.8-9.6,10.3-9.6,17.7H15.2c0-14.1,8.9-26.1,21.3-30.7
-          C40.1,15.9,43.9,15.1,48,15.1z" />
-                        </g>
-                        <g>
-    
-                            <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="1.48" y1="25.265" x2="47.98"
-                                y2="25.265" gradientTransform="matrix(1 0 0 -1 0 50)">
-                                <stop offset="0" style="stop-color:#FFFFFF" />
-                                <stop offset="1" style="stop-color:#D9E149" />
-                            </linearGradient>
-                            <path class="st1" d="M48,1.5v11.7c-4,0-7.8,0.7-11.4,1.9c0,0-0.1,0-0.1,0C23,19.9,13.2,32.8,13.2,48H1.5
-          c0-13.8,6.1-26.2,15.6-34.8H2V1.5H48z" />
-                        </g>
-                    </g>
-                </svg>
-                FILE<span>DROP</span><span>SHARE</span>
-            </a>
+              <a class="navbar-brand" href="/">
+                <img width="150px" src="/assets/logo/file drop share logo.svg" alt="filedroptransfer">
+              </a>
             </div>
-            <p class="text-white my-4">{{footerData.description}}</p>
+            <p class="my-4">{{footerData.description}}</p>
             <div class="d-flex social-links mb-4 gap-2">
               {%- for link in footerData.social -%}
               <a target="_blank" class="share-btn {{link.title}}-link" href="{{link.url}}">
@@ -105,9 +70,9 @@
           </div>
         </div>
 
-
+        
         <div class="scroll-top" onclick="scrollToTop()">
-          <img width="25px" height="25px" src="/assets/images/down-arrow.svg" alt="down-arrow">
+          <img width="25px" height="25px" src="/assets/images/social-images/top-f-free-file-share-com.svg" alt="down-arrow">
         </div>
       </div>
     </div>

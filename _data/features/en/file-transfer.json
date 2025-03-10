@@ -7,42 +7,42 @@
     "h2": "Share Big Files Instantly – No Upload, No Limits, Just Secure File Transfer.",
     "featureHighlights": [
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/users.svg",
             "title": "Effortless File Sharing",
             "description": [
                 "Our goal is to simplify large file transfers, allowing you to send large files quickly and easily—without any complex steps."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/free.svg",
             "title": "100% Free",
             "description": [
                 "Share large files between devices at no cost. No subscriptions, no hidden fees, and no account registration required."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/fast.svg",
             "title": "Lightning-Fast Transfers",
             "description": [
                 "Enjoy high-speed, direct file sharing with no server storage involved. Instantly send large files by share unique link or scan QR code."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/safety.svg",
             "title": "Private & Secure",
             "description": [
                 "Your data stays completely safe since files are never uploaded to a server. All transfers occur directly between devices, ensuring total privacy."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/nofilesizelimit.svg",
             "title": "No File Size Limits",
             "description": [
                 "Send files of any size without restrictions. Since we don’t store your data on a server, there’s no limit to how large your transfers can be."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/devices.svg",
             "title": "Cross-Platform Compatibility",
             "description": [
                 "Easily share files across various operating systems, including Windows, macOS, Android, and iOS—without any compatibility issues."

@@ -1,7 +1,7 @@
 name: filedropshare
 title: filedropshare
 email: your-email@filedropshare.com
-description: Share files directly, quickly and securely with our free FileDropShare. We provide the simplest way to transfer your big files without requiring any sign-up.
+description: Share files directly, quickly and securely with our free FileDropShare. We provide the simplest way to transfer your big files without any sign-up.
 baseurl: "" 
 url: https://filedropshare.com
 favicon: /favicon.svg

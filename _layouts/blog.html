@@ -4,6 +4,9 @@
 
 
 <style>
+  h1{
+    color: black;
+  }
   .card {
     height: 100%;
   }
@@ -31,8 +34,12 @@
       <div class="col-lg-10  mx-auto">
         <div class="mt-5 headings text-left">
 
-       
+      
+          {%- if site.posts.size == 0 -%}
+          <h1 class="page-h1 mb-3">No blog posts yet.</h1>
+          {%- else -%}
           <h1>The FileDropShare Blog</h1>
+          {%- endif -%}
         
         </div>
 

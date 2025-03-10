@@ -7,42 +7,42 @@
     "h2": "Fast, Secure & Wireless Sharing for Large Files!",
     "featureHighlights": [
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/fast.svg",
             "title": "Instant File Sharing",
             "description": [
                 "Transfer large files effortlessly in just a few clicks—no waiting, no complexity."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/signup.svg",
             "title": "Completely Free & No Sign-Up",
             "description": [
                 "Enjoy unlimited file transfers without any fees, registrations, or restrictions."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/direct.svg",
             "title": "Direct Peer-to-Peer Connection",
             "description": [
                 "Files are shared directly between devices—no server storage, no delays."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/safety.svg",
             "title": " Secure & Private Transfers",
             "description": [
                 "Your data stays safe and confidential since nothing is stored online."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/nofilesizelimit.svg",
             "title": "Unlimited File Size",
             "description": [
                 "Send huge files without worrying about limits—perfect for any type of content."
             ]
         },
         {
-            "image": "/assets/images/change-background/change-bg-img.webp",
+             "image": "/assets/images/feature-highlight-images/devices.svg",
             "title": "Works Across All Devices",
             "description": [
                 "Seamlessly share files between Windows, macOS, Android, iOS, and more."
