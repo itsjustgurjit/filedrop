@@ -153,7 +153,7 @@ function onPeerOpen(id) {
 }
 
 function onPeerError(error) {
-  updateStatus(`Connection error: ${error.message}`, "error");
+  updateStatus(`Connection error`, "error");
   removeQueryParams();
   setTimeout(initializePeer, 5000);
 }
@@ -329,13 +329,10 @@ function createModalContent(link) {
             
             <div class="help-text">
                 <span>If you don't know how to share files, here the </span>
-                <a href="#" class="tutorial-link">Tutorial</a>
+            
             </div>
             
-            <div class="connect-section">
-                <input type="text" placeholder="Enter id here" class="id-input" id="peerId-modal">
-                <button onclick="connectToPeerViaShareModal()">Connect</button>
-            </div>
+           
         </div>
     `;
 }
@@ -359,11 +356,11 @@ function showShareModal(fileInput) {
   modalContent.className = "modal-content";
   modalContent.innerHTML = createModalContent(link);
   // Add click outside to close
-  modalOverlay.addEventListener("click", (event) => {
-    if (event.target === modalOverlay) {
-      closeModal();
-    }
-  });
+  // modalOverlay.addEventListener("click", (event) => {
+  //   if (event.target === modalOverlay) {
+  //     closeModal();
+  //   }
+  // });
   // Add close button functionality
   modalContent
     .querySelector(".close-button")

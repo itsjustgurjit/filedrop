@@ -281,6 +281,9 @@ progress::-webkit-progress-value {
   text-decoration: none;
 }
 
+#fileInfo{
+  color: black !important;
+}
 .file-info {
   margin-top: 3rem;
 }
@@ -438,6 +441,7 @@ progress::-webkit-progress-value {
   padding: 8px 16px;
   border-radius: 20px;
   cursor: pointer;
+  color: black;
 }
 
 .id-section {
