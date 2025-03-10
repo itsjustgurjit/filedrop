@@ -153,7 +153,7 @@ function onPeerOpen(id) {
 }
 
 function onPeerError(error) {
-  updateStatus(`Connection error: ${error.message}`, "error");
+  updateStatus(`Connection error`, "error");
   removeQueryParams();
   setTimeout(initializePeer, 5000);
 }
