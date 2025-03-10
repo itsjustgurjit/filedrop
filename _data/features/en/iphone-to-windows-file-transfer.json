@@ -1,0 +1,75 @@
+{
+    "Language": "English",
+    "htmlLangAtt": "en",
+    "title": "Send Huge Files online from iPhone to Windows",
+    "meta": "Send large files quickly and directly with Iphone to windows file transfer—fast, secure, and 100% free, no sign-ups needed.",
+    "h1": "Iphone to windows file transfer",
+    "h2": "iPhone to Windows File Transfer – Send Large Files Fast, Secure & Wireless",
+    "featureHighlights": [
+        {
+            "image": "/assets/images/feature-highlight-images/free.svg",
+            "title": "Fast & Hassle-Free Transfers",
+            "description": [
+                "Send large files in seconds with just a link or QR code—no complicated steps!"
+            ]
+        },
+        {
+            "image": "/assets/images/feature-highlight-images/signup.svg",
+            "title": "No Sign-Up Needed",
+            "description": [
+                "Enjoy unlimited file sharing without any fees, accounts, or hidden costs."
+            ]
+        },
+        {
+            "image": "/assets/images/feature-highlight-images/direct.svg",
+            "title": "Direct Device-to-Device Sharing",
+            "description": [
+                "Your files go straight from sender to receiver—no middleman, no storage, just instant delivery."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/safety.svg",
+            "title": " 100% Secure & Private",
+            "description": [
+                "Since files never touch a server, your data stays completely safe and confidential."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/nofilesizelimit.svg",
+            "title": "No File Size Restrictions",
+            "description": [
+                "Share massive files with ease—perfect for videos, photos, documents, and more."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/devices.svg",
+            "title": "Works on Any Device",
+            "description": [
+                "Transfer files seamlessly between Windows, macOS, iOS, Android, and more."
+            ]
+        }
+    ],
+    "howTo": {
+        "image": "/assets/images/change-background/change-bg-how-to.webp",
+        "heading": "How can I use filedropshare to send huge files form Iphone to windows?",
+        "steps": [
+            "Just press the Add File button and select your files for transfer from iPhone to Windows.",
+            "FileDropShare will generate a URL link and a scan code for your file.",
+            "The last step is to share this URL or scan the code on Windows."
+        ]
+    },
+    "faqs": [
+        {
+            "question": "How much secure my files ?",
+            "answer": "We use peer-to-peer technology, which doesn’t involve a server, ensuring that your files remain safe and protected during sharing."
+        },
+        {
+            "question": "Can I use filedropshare offline?",
+            "answer": "No, we provide an online service that requires a proper internet connection, so you cannot share huge files offline."
+        },
+        {
+            "question": "What should I do to send huge files from iPhones to Windows?",
+            "answer": "You only need to send the URL or scan the code to transfer your file from iPhones to Windows."
+        }
+    ]
+}

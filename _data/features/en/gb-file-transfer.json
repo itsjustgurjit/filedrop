@@ -1,0 +1,79 @@
+{
+    "Language": "English",
+    "htmlLangAtt": "en",
+    "title": "GB file Transfer - Free and fast file sharing",
+    "meta": "Share very large files (videos, photos, PDFs, etc.) effortlessly with GB File Transfer—free, fast, and secure, with no sign-ups or registrations required.",
+    "h1": "GB file Transfer",
+    "h2": "Send & Receive GB Files in Few Steps – Choose, Share Link, Download",
+    "featureHighlights": [
+        {
+             "image": "/assets/images/feature-highlight-images/fast.svg",
+            "title": "Quick & Easy",
+            "description": [
+                "Send large files instantly with just a link or QR code—no hassle."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/free.svg",
+            "title": "100% Free",
+            "description": [
+                "No fees, no subscriptions, no accounts—just share files."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/direct.svg",
+            "title": "Super Fast",
+            "description": [
+                "Direct peer-to-peer transfers for maximum speed, no delays."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/safety.svg",
+            "title": "Fully Secure",
+            "description": [
+                "Files never touch a server, ensuring total privacy."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/nofilesizelimit.svg",
+            "title": "No Limits",
+            "description": [
+                "Send files of any size without restrictions or storage limits."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/devices.svg",
+            "title": "All Devices Supported",
+            "description": [
+                "Seamlessly transfer files across Windows, macOS, Android, and iOS."
+            ]
+        }
+    ],
+    "howTo": {
+        "image": "/assets/images/change-background/change-bg-how-to.webp",
+        "heading": "How do I share GB files directly from any device?",
+        "steps": [
+            "Upload your GB file to share on FileDropShare.",
+            "When we receive your file, we create a link and QR code in no time.",
+            "By sharing that link or QR code, your file is directly downloaded on another device."
+        ]
+    },
+    "faqs": [
+        {
+            "question": "Can i share GB files directly ? ",
+            "answer": "Yes, our service uses end-to-end encryption, allowing you to send files directly from any device without involving any server."
+        },
+        {
+            "question": "Do I need to create an account to send files?",
+            "answer": "No, you can send and receive files without any registration or sign-up."
+        },
+        {
+            "question": "Do I have to pay to transfer files?",
+            "answer": "No, you don’t have to pay to send and receive large files. We provide an absolutely free service."
+        },
+        {
+            "question": "How many types of devices does FileDropShare support?",
+            "answer": "You can send and receive large files (videos, documents, pictures, etc.) from any device, including Windows, macOS, Android, and Linux, using FileDropShare."
+        }
+    ]
+}

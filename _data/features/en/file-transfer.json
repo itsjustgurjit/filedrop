@@ -1,0 +1,84 @@
+{
+    "Language": "English",
+    "htmlLangAtt": "en",
+    "title": "Send Anywhere File Transfer | Fast & Secure Sharing Online",
+    "meta": "Send files quickly and securely with File Transfer—no sign-ups, no hassle, just fast and free transfers without any third-party involvement.",
+    "h1": "File Transfer",
+    "h2": "Share Big Files Instantly – No Upload, No Limits, Just Secure File Transfer.",
+    "featureHighlights": [
+        {
+             "image": "/assets/images/feature-highlight-images/users.svg",
+            "title": "Effortless File Sharing",
+            "description": [
+                "Our goal is to simplify large file transfers, allowing you to send large files quickly and easily—without any complex steps."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/free.svg",
+            "title": "100% Free",
+            "description": [
+                "Share large files between devices at no cost. No subscriptions, no hidden fees, and no account registration required."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/fast.svg",
+            "title": "Lightning-Fast Transfers",
+            "description": [
+                "Enjoy high-speed, direct file sharing with no server storage involved. Instantly send large files by share unique link or scan QR code."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/safety.svg",
+            "title": "Private & Secure",
+            "description": [
+                "Your data stays completely safe since files are never uploaded to a server. All transfers occur directly between devices, ensuring total privacy."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/nofilesizelimit.svg",
+            "title": "No File Size Limits",
+            "description": [
+                "Send files of any size without restrictions. Since we don’t store your data on a server, there’s no limit to how large your transfers can be."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/devices.svg",
+            "title": "Cross-Platform Compatibility",
+            "description": [
+                "Easily share files across various operating systems, including Windows, macOS, Android, and iOS—without any compatibility issues."
+            ]
+        }
+    ],
+    "howTo": {
+        "image": "/assets/images/change-background/change-bg-how-to.webp",
+        "heading": "How can I transfer files from one device to another ?",
+        "steps": [
+            "Click the 'Add File' button to select and upload the file you want to share",
+            "Once uploaded, a unique link and QR code will be automatically generated.",
+            "Copy and share the link or scan the QR code on the desired device for an instant transfer."
+        ]
+    },
+    "faqs": [
+        {
+            "question": "Is there need to sign up to share big files by using our filedrop share?",
+            "answer": "No, there is no need to sign up to share large files. We provide a completely free online file transfer service."
+        },
+        {
+            "question": "Can I send multiple files at once ?",
+            "answer": "Yes, you can easily transfer multiple files at once from one device to another by selecting all the files together and uploading them."
+        },
+        {
+            "question": "Can I transfer file between different devices?",
+            "answer": "Yes, you can transfer files from any device to another. Our FileDropShare web tool works on all devices, including desktops, laptops, and mobile phones."
+        },
+        {
+            "question": "Do my file transfer secure?",
+            "answer": "Yes, we use peer-to-peer (P2P) encryption, ensuring that your files are transferred securely without being stored on any server."
+        },
+
+        {
+            "question": "How can I receive large files by using our webtool?",
+            "answer": "We provide three options to receive large files: You can paste the link or scan the QR code on the device where you want to receive the file and click the download button. Additionally, we offer a unique ID that you can enter and tap the connect button to receive your file."
+        }
+    ]
+}

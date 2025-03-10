@@ -3,40 +3,56 @@
 
 {%- include head.html -%}
 
+<style>
+    h1,h2{
+        font-size: 25px;
+    }
+    p,
+    h1,
+    h2,
+    ul,
+    li {
+        color: black
+    }
+</style>
+
 <body>
     {%- include navbar.html -%}
 
     <div class="container my-5">
-       <div class="row">
-        <div class="col-md-10 mx-auto">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <h1 class="mb-3" style="font-size: 30px">About us</h1>
-                    <p>
-                        I was sitting next to a colleague at work.
-                        We had to meet a tight deadline, and in order to finish our work he had to share a large file with me.
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <h1 class="mb-3" style="font-size: 30px; font-weight: 600;">About us</h1>
+                        <p>Peer-to-peer (P2P) file-sharing platform that makes sending files easy, fast, and secure. We
+                            believe that file sharing should be hassle-free, without involving any third-party servers.
                         </p>
-                       <p> The file was too large to email, we didn't have a USB stick with us, and only one of us had a MacBook, so we couldn't use AirDrop. Ultimately, the file had to be split and sent via WeTransfer.
-                    </p>
-                    <p>
-                        I was sitting next to a colleague at work.
-                        We had to meet a tight deadline, and in order to finish our work he had to share a large file with me.
-                        </p>
-                       <p> The file was too large to email, we didn't have a USB stick with us, and only one of us had a MacBook, so we couldn't use AirDrop. Ultimately, the file had to be split and sent via WeTransfer.
-                    </p>
-                    <p>
-                        I was sitting next to a colleague at work.
-                        We had to meet a tight deadline, and in order to finish our work he had to share a large file with me.
-                        </p>
-                       <p> The file was too large to email, we didn't have a USB stick with us, and only one of us had a MacBook, so we couldn't use AirDrop. Ultimately, the file had to be split and sent via WeTransfer.
-                    </p>
 
-                    <p>
-                        It was an incredibly frustrating experience. I could give my colleague a toffee from a bowl on the table, but the only way I could send him a file was by literally sending it to another continent first.</p>
+                        <br>
+                        <h2>Our Mission</h2>
+                        <p>Our goal is to provide a secure and private way for users to share files in real-time,
+                            ensuring security, speed, and efficiency. By using end-to-end encryption technology, we
+                            eliminate the need for cloud storage, making file transfers more private and direct.</p>
+
+
+                            <br>
+                        <h2>Why Choose Us?</h2> 
+                        <ul class="mt-3">
+                            <li><strong>Secure & Private:</strong> We never store your large files (videos, pictures,
+                                docs, etc.) on any server. File transfer is completed by end-to-end encryption, keeping
+                                your data safe.</li>
+                            <li><strong>Fast Transfers:</strong> Enjoy high-speed file transfers without size
+                                restrictions imposed by traditional cloud services.</li>
+                            <li><strong>No Sign-ups Required:</strong> Start sharing instantly without the need for
+                                creating an account.</li>
+                            <li><strong>Cross-Platform Compatibility:</strong> Send files between desktop and mobile
+                                devices effortlessly.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-       </div>
     </div>
     {%- include footer.html -%}
 

@@ -1,7 +1,7 @@
 ---
 layout: fileshare
 folderName: features
-fileName: fileshare
+fileName: home
 lang: en
 ---
 

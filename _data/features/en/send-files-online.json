@@ -1,0 +1,79 @@
+{
+    "Language": "English",
+    "htmlLangAtt": "en",
+    "title": "Send Large Files Online - Free & Secure Instant File Transfer",
+    "meta": "Easily share huge files with Send Files Online—fast, secure, and completely free, with no sign-ups or registrations required.",
+    "h1": "Send Files Online",
+    "h2": "Send Files Online – Fast, Secure & Peer-to-Peer, No Upload Required",
+    "featureHighlights": [
+        {
+             "image": "/assets/images/feature-highlight-images/users.svg",
+            "title": "Fast & Easy Sharing",
+            "description": [
+                "Share large files effortlessly in just a few clicks. No complicated steps—simply share link or scan QR code for an instant transfer."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/free.svg",
+            "title": "Free & No Sign-Ups",
+            "description": [
+                "Enjoy completely free file transfers with no hidden fees or subscriptions. No account creation required—just start sharing right away."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/fast.svg",
+            "title": "Blazing Speed",
+            "description": [
+                "Experience high-speed, peer-to-peer transfers without server storage. Share large files instantly without waiting or delays."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/safety.svg",
+            "title": "Private & Secure",
+            "description": [
+                "Your data stays 100% safe as files are never uploaded to a server. Transfers occur directly between devices, ensuring complete privacy."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/nofilesizelimit.svg",
+            "title": "No Size Limits",
+            "description": [
+                "Send files of any size without restrictions. Since files aren’t stored on a server, there’s no cap on how large your transfers can be."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/devices.svg",
+            "title": "Works Everywhere",
+            "description": [
+                "Easily share files across different devices, including Windows, macOS, Android, and iOS—without compatibility issues."
+            ]
+        }
+    ],
+    "howTo": {
+        "image": "/assets/images/change-background/change-bg-how-to.webp",
+        "heading": "How to send files online for free without any registration or sign up ?",
+        "steps": [
+            "Drag and drop a file from your device by clicking the given button.",
+            "After uploading, you will see a link and QR code on your screen for your file to download on another device.",
+            "You need to share the link or QR code with the device where you want to transfer the file.."
+        ]
+    },
+    "faqs": [
+        {
+            "question": "Where can I send files without registration or sign-up ?",
+            "answer": "Our FileDropShare is a free online file transfer web tool where you can send large files without requiring registration or sign-up."
+        },
+        {
+            "question": "Is it safe to share important or private data?",
+            "answer": "Yes, you can securely transfer your private or important files without worrying about third-party access. Our peer-to-peer (P2P) technology ensures that your files are shared directly between users without involving any server, keeping your data safe and private."
+        },
+        {
+            "question": "Can I send multiple large files at the same time?",
+            "answer": "Yes, you can easily send multiple files (videos, documents, images, etc.) at the same time by selecting multiple files together and uploading them on FileDropShare."
+        },
+        {
+            "question": "Is it possible to send files between two different devices?",
+            "answer": "Absolutely yes! You can share files between any devices. There are no restrictions on device types—it works on laptops, Windows, Android and more."
+        }
+    ]
+}

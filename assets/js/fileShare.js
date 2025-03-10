@@ -18,6 +18,9 @@ let generateShortId_Val = "";
 let connection_input_status = document.getElementById(
   "connection-input-status"
 );
+
+
+
 const connectButtons = document.querySelectorAll(".connectButton");
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -55,7 +58,15 @@ let dBTN = document.getElementById('dBTN')
 if (connectionId) {
   console.log('yes there is a connection id ')
   dBTN.style.display = 'flex'
+  receivedFilesContainer.style.display = "block"
+  document.querySelector(".receiver-card").style.display = "none"
+  document.querySelector("#status").style.display = "block"
+  document.querySelector(".add-file-button").style.display = "none"
 }
+document.querySelector(".download-close").addEventListener("click", () => {
+  history.replaceState(null, "", location.pathname);
+  location.reload()
+})
 
 dBTN.addEventListener('click', () => {
   startPeerConnection();
@@ -231,6 +242,14 @@ function onDataReceived(data) {
     (document.getElementById("progressContainer").style.display = "none"),
       resetTransfer();
     updateStatus("All files received successfully!", "success");
+
+    document.querySelector("#receivedFilesContainer").style.display = "block"
+    document.querySelector(".add-file-button").style.display = "none"
+    document.querySelector(".completed").innerHTML = "🎉 Your files have been successfully transferred."
+
+
+    // history.replaceState(null, "", location.pathname);
+    // location.reload()
   } else if (data.type === "progress-update") {
     updateProgress(data.progress, data.receivedSize, data.totalSize);
     const chunkInfo = data.currentChunk
@@ -255,7 +274,7 @@ function onConnectionClose() {
 
 function startFileTransfer() {
   if (files.length === 0 || !connection) return;
-
+  document.querySelector('.add-file-button').style.display = 'none'
   currentFileIndex = 0;
   currentChunk = 0;
   totalTransferProgress = 0;
@@ -270,7 +289,7 @@ function generateShareLink() {
   return link;
 }
 function onFilesSelected(e) {
-  initializePeer();
+ 
   files = Array.from(e.target.files);
   if (files.length > 0) {
     updateFileInfo();
@@ -358,9 +377,9 @@ function showShareModal(fileInput) {
   qrContainer.appendChild(generateQRCode(link));
 }
 
-function pageReload(){
+function pageReload() {
   const userChoice = window.confirm("Your data will be lost. Do you want to continue?");
-    
+
   // If the user clicks "OK" (Leave), reload the page
   if (userChoice) {
     window.location.reload();
@@ -417,12 +436,11 @@ function showPopup(x, y) {
 
 function updateFileInfo() {
   const info = files
-    .map(
-      (file) =>
-        `<p><strong>File:</strong> ${file.name} (${formatFileSize(
-          file.size
-        )})</p>`
-    )
+    .map((file) => {
+      const truncatedName =
+        file.name.length > 20 ? file.name.substring(0, 20) + "..." : file.name;
+      return `<p><strong>File:</strong> ${truncatedName} (${formatFileSize(file.size)})</p>`;
+    })
     .join("");
   document.getElementById("fileInfo").innerHTML = info;
 }
@@ -495,23 +513,41 @@ function sendNextChunk(file) {
 }
 
 function prepareFileReception(fileInfo) {
+  // Initialize variables for new file
+  let completed_text = document.querySelector('.completed')
+  completed_text.innerHTML = `<img height="89px" width="89px" src="/assets/images/loading.gif" alt="Loading..."> <br> please wait...`;
+
+
+  document.getElementById('dBTN').style.display = 'none'
+  
+  currentFileInfo = fileInfo;
   receivedSize = 0;
-  receivedChunks = new Array(fileInfo.totalChunks);
+
+  // Create array with exact size needed for chunks
+  receivedChunks = new Array(fileInfo.totalChunks).fill(undefined);
+  const shortFileName = fileInfo.name.length > 5 ? fileInfo.name.slice(0, 5) + "..." : fileInfo.name;
+  console.log(shortFileName);
+  
+  // Update UI
   updateFileInfo();
   updateStatus(
-    `Receiving ${fileInfo.name} (${fileInfo.index + 1}/${fileInfo.totalFiles
-    })...`,
+    
+    `Receiving ${shortFileName} (${fileInfo.index + 1}/${fileInfo.totalFiles})...`,
     "success"
   );
   document.getElementById("progressContainer").style.display = "block";
 }
 
 function receiveFileChunk(data) {
+  // Store the chunk in the correct position
   receivedChunks[data.chunkIndex] = data.data;
   receivedSize += data.data.byteLength;
+
+  // Calculate progress based on received size
   const progress = (receivedSize / currentFileInfo.size) * 100;
   updateProgress(progress, receivedSize, currentFileInfo.size);
 
+  // Send progress update to the sender
   connection.send({
     type: "progress-update",
     progress: progress,
@@ -521,10 +557,36 @@ function receiveFileChunk(data) {
     currentChunk: data.chunkIndex + 1,
     totalChunks: currentFileInfo.totalChunks,
   });
-}
 
+  // Check if all chunks have been received
+  const allChunksReceived = receivedChunks.every(chunk => chunk !== undefined);
+  const expectedSize = receivedChunks.reduce((total, chunk) => total + (chunk ? chunk.byteLength : 0), 0);
+
+  // If we have all chunks and the size matches, complete the file
+  if (allChunksReceived && expectedSize === currentFileInfo.size) {
+    completeFileReception();
+  }
+}
 function completeFileReception() {
-  const blob = new Blob(receivedChunks);
+  // Filter out any undefined chunks (should not happen, but for safety)
+  const validChunks = receivedChunks.filter(chunk => chunk !== undefined);
+
+  // Check if we have all chunks
+  if (validChunks.length !== currentFileInfo.totalChunks) {
+    updateStatus(`Error: Missing chunks for ${currentFileInfo.name}`, "error");
+    return;
+  }
+
+  // Create blob from all chunks
+  const blob = new Blob(validChunks);
+
+  // Verify file size
+  if (blob.size !== currentFileInfo.size) {
+    updateStatus(`Error: File size mismatch for ${currentFileInfo.name}`, "error");
+    return;
+  }
+
+  // Create download link
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
@@ -535,20 +597,40 @@ function completeFileReception() {
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 
+  // setTimeout(() => {
+  //   location.reload()
+  // }, 1000);
+
+  // Update UI
   receivedFiles.push(currentFileInfo.name);
-  updateStatus(
-    `File received successfully: ${currentFileInfo.name}`,
-    "success"
-  );
+  updateStatus(`File received successfully: ${currentFileInfo.name}`, "success");
   displayReceivedFiles();
+
+  // Send confirmation to sender
+  connection.send({
+    type: "file-received-confirmation",
+    fileName: currentFileInfo.name,
+    fileIndex: currentFileInfo.index,
+  });
 
   // Reset for next file
   receivedChunks = [];
   receivedSize = 0;
 
-  // Add this: Send confirmation back to sender when this was the last file
+  // Send completion message if this was the last file
   if (currentFileInfo.index === currentFileInfo.totalFiles - 1) {
     connection.send({ type: "all-files-complete" });
+
+    
+    
+    setTimeout(() => {
+      document.querySelector("#dBTN").style.display = "none"
+      document.querySelector("#receivedFiles").style.display = "none"
+      document.querySelector(".completed").innerHTML = "🎉 Your files have been successfully transferred."
+    //   history.replaceState(null, "", location.pathname);
+    //     location.reload();
+    }, 1000);
+
   }
 }
 
@@ -589,4 +671,23 @@ function updateProgress(progress, currentSize, totalSize) {
 }
 
 // Initialize everything
+initializePeer();
 setupEventListeners();
+
+
+// animate
+
+document.addEventListener("scroll", function () {
+    const scrollY = window.scrollY;
+    const element = document.querySelector(".file-share-container");
+  
+    // Increase max-width as you scroll (but cap it to avoid excessive size)
+    let newSize = Math.min(500, 100 + scrollY * 0.2); // Start from 100vw, grow up to 200vw
+    let newOpacity = Math.max(1 - scrollY / 500, 0); // Decrease opacity smoothly
+  
+    // Apply dynamic styles
+    element.style.setProperty("--max-width", `${newSize}vw`);
+    element.style.setProperty("--opacity", newOpacity);
+  });
+  
+  console.log('animate js is loaded')

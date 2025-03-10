@@ -3,7 +3,7 @@
 
 <footer class="mt-5 bottom-footer">
   <div class="container-lg">
-    <div class="footer-section px-5">
+    <div class="footer-section">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-3">
@@ -27,37 +27,31 @@
 
           <div class="col-md-3">
 
-           
             <div class="footer-category">Quick Links</div>
-         
             <ul class="footer-list">
               {%- for link in footerData.quickLinks -%}
               <li><a class="footer-link" href="{{link.url}}">{{link.name}}</a></li>
               {%- endfor -%}
             </ul>
           </div>
+        
+
           <div class="col-md-3">
-            {%- if page.lang == "en" -%}
-            <div class="footer-category">Text Tools</div>
-            {%- else -%}
-            <div class="footer-category">Free Tools</div>
-            {%- endif -%}
-            
+            <div class="footer-category">Quick Links</div>
+           
             <ul class="footer-list">
-              {%- for link in footerData.freeTools -%}
+              {%- for link in footerData.company -%}
               <li><a class="footer-link" href="{{link.url}}">{{link.name}}</a></li>
               {%- endfor -%}
             </ul>
           </div>
 
           <div class="col-md-3">
-            {%- if page.lang == "en" -%}
-            <div class="footer-category">SEO Analysis Tools</div>
-            {%- else -%}
-            <div class="footer-category">Company</div>
-            {%- endif -%}
+           
+            <div class="footer-category">Quick Links</div>
+         
             <ul class="footer-list">
-              {%- for link in footerData.company -%}
+              {%- for link in footerData.freeTools -%}
               <li><a class="footer-link" href="{{link.url}}">{{link.name}}</a></li>
               {%- endfor -%}
             </ul>

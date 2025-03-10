@@ -1,0 +1,88 @@
+{
+    "Language": "English",
+    "htmlLangAtt": "en",
+    "title": "Send Large Files - Easy Online File Transfer",
+    "meta": "Sharing large files becomes quick and direct with our free service, Send Large Files. Transfer big files instantly, securely and without the hassle of registrations.",
+    "h1": "Send Large Files",
+    "h2": "Fast & Secure Large File Sharing – Send Large Files Online, No Upload, No Limits",
+    "featureHighlights": [
+        {
+             "image": "/assets/images/feature-highlight-images/users.svg",
+            "title": "Effortless File Sharing ",
+            "description": [
+                "Our main goal is to make it easy to send large files in just a few clicks—without any unnecessary steps or complexity."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/free.svg",
+            "title": "Completely Free",
+            "description": [
+                "Transfer large files between devices at no cost. No subscriptions, no hidden charges, and no sign-ups required."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/fast.svg",
+            "title": "Blazing-Fast Transfers ",
+            "description": [
+                "We provide a high-speed Experience, direct file sharing without server storage. You can send large files without any delay by simply sharing link or scan QR code."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/safety.svg",
+            "title": "Secure & Private ",
+            "description": [
+                "Your data remains 100% secure, as files are never uploaded to a server. Transfers happen directly between devices, ensuring maximum privacy."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/nofilesizelimit.svg",
+            "title": "Unlimited File Size ",
+            "description": [
+                "Send files of any size without restrictions. Since we don’t store your files on a server, there’s no limit to how large your transfers can be."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/devices.svg",
+            "title": "Works on Any Device",
+            "description": [
+                "Easily transfer files across different operating systems, including Windows, macOS, Android, and iOS—without compatibility issues."
+            ]
+        }
+    ],
+    "howTo": {
+        "image": "/assets/images/change-background/change-bg-how-to.webp",
+        "heading": "How to Transfer Files Between Devices",
+        "steps": [
+            "Select Your File – Click the 'Add File' button to choose large file you want to share.",
+            "Generate Link & QR Code – Once selected, unique link and QR code will be created automatically.",
+            "Share & Transfer – Copy the link or scan the QR code on the receiving device to download the file instantly."
+        ]
+    },
+    "faqs": [
+        {
+            "question": "What is peer to peer?",
+            "answer": "Peer-to-peer (P2P) is a type of networking that helps users send their files directly to other users without uploading and downloading them on a server, in no time."
+        },
+        {
+            "question": "What is a file sharing service? ",
+            "answer": "A file-sharing service plays a vital role when you need to transfer very large files quickly without physical storage available on devices. You can send, receive, and store large files by sharing links or QR codes for these files."
+        },
+        {
+            "question": "Is file sharing safe?",
+            "answer": "As there is no need to upload files for transfer on server, our service works on peer-to-peer networking, which does not involve any server. Instead, it works directly between two clients. So, File sharing is absolutly secure and safe."
+        },
+        {
+            "question": "How can i transfer files from phone to computer?",
+            "answer": "Select files from your mobile, and our tool will generate a link that you can share with your computer."
+        },
+
+        {
+            "question": "Do I need to upload large files to share them?",
+            "answer": "No, you don’t need to upload large files for sharing. You can simply copy and share a link or QR code to transfer the file directly."
+        },
+        {
+            "question": "How can i send and receive big files with not enough storage on device?",
+            "answer": "If you don’t have enough storage on your device to store or receive large files, our online file transfer platform provides a solution. You can transfer files using only links."
+        }
+    ]
+}

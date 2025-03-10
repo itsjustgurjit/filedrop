@@ -1,0 +1,75 @@
+{
+    "Language": "English",
+    "htmlLangAtt": "en",
+    "title": "Send & Receive Large Files – Up to 2GB for Free",
+    "meta": "Quickly and securely share large files with 2GB File Transfer—no sign-ups, no hassle, just fast and free transfers.",
+    "h1": "Transfer Files for Free Up to 2GB",
+    "h2": "Fast, Secure & Peer-to-Peer Large File Sharing",
+    "featureHighlights": [
+        {
+             "image": "/assets/images/feature-highlight-images/direct.svg",
+            "title": "Direct File Transfer",
+            "description": [
+                "Share your file online directly from one device to another without involving any server by just copy paste a link or Qr code."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/nofilesizelimit.svg",
+            "title": "No File Size Limit",
+            "description": [
+                "There is no file size limit for sharing files as We don’t upload your files on any server. "
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/safety.svg",
+            "title": "Data Security",
+            "description": [
+                "Ensure 100% security and privacy for your data during online file transfers with our tool, as we don’t upload your file to a server for transfer."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/users.svg",
+            "title": "User-Friendly",
+            "description": [
+                "Our file transfer web tool is easy to use, allowing you to send large files in just a few steps—without any complexity."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/free.svg",
+            "title": "Free to use",
+            "description": [
+                "No charges for transferring large files between devices. You can easily share huge files without requiring sign-up or registration."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/devices.svg",
+            "title": "Cross-Platform",
+            "description": [
+                "Files can be shared between different operating systems and devices, such as Windows, macOS, and iOS."
+            ]
+        }
+    ],
+    "howTo": {
+        "image": "/assets/images/change-background/change-bg-how-to.webp",
+        "heading": "How can I transfer my 2GB file directly and securely from one device to anywhere?",
+        "steps": [
+            "Choose your 2GB file from your device and upload it on clicking the Add button.",
+            "Once your 2GB file is uploaded, an exclusive URL link or scan code will be displayed on your screen.",
+            "Send this URL link or scan code to the other device to transfer the file securely and directly."
+        ]
+    },
+    "faqs": [
+        {
+            "question": "Is it possible for my data to be shared with a third party while transferring?",
+            "answer": "No, it is impossible for your data to be shared with a third party while transferring because we don’t upload your large files to the server."
+        },
+        {
+            "question": "How can I receive a 2GB file even if my device doesn’t have enough storage?",
+            "answer": "You can receive large files directly from anywhere by copying and pasting the link or scanning the code generated for the files using FileDropShare."
+        },
+        {
+            "question": "How can I send and receive my 2GB files (videos, music, docs, etc.) without having enough storage?",
+            "answer": "You can send and receive 2GB files using peer-to-peer file-sharing technology without uploading them to a server by using our FileDropShare."
+        }
+    ]
+}

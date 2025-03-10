@@ -1,0 +1,75 @@
+{
+    "Language": "English",
+    "htmlLangAtt": "en",
+    "title": "Share Files Online for Free – No Limits, No ads",
+    "meta": "Transfer big files instantly with FileDropShare—fast, secure, and completely free, no sign-up required.",
+    "h1": "File Share",
+    "h2": "Fast & Secure File Sharing – Peer-to-Peer, No Signup, Just Click, Share & Download",
+    "featureHighlights": [
+        {
+             "image": "/assets/images/feature-highlight-images/users.svg",
+            "title": "Quick & Easy Transfers",
+            "description": [
+                "Send large files effortlessly with a simple copy-paste link or QR code—no technical skills required!"
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/free.svg",
+            "title": "100% Free to Use",
+            "description": [
+                "Transfer huge files without any cost, registration, or hidden fees—completely free forever."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/direct.svg",
+            "title": "Direct file Sharing",
+            "description": [
+                "Your files go directly from sender to receiver without touching any server, ensuring privacy and speed."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/safety.svg",
+            "title": "Maximum Security & Privacy",
+            "description": [
+                "Since we don’t store files on a server, your data remains private and secure at all times.                "
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/nofilesizelimit.svg",
+            "title": "No File Size Limit",
+            "description": [
+                "Share files of any size without restrictions—perfect for videos, images, and large documents."
+            ]
+        },
+        {
+             "image": "/assets/images/feature-highlight-images/devices.svg",
+            "title": "Cross-Platform Compatibility",
+            "description": [
+                "Send and receive files between any device—Windows, macOS, iOS, Android, and more! "
+            ]
+        }
+    ],
+    "howTo": {
+        "image": "/assets/images/change-background/change-bg-how-to.webp",
+        "heading": "How does our filedropshare work for sharing large file to anywhere?",
+        "steps": [
+            "Select large file you want to share and upload it here.",
+            "As soon as we receive your file, a unique link and QR code will be displayed on your device screen.",
+            "Share this link or scan code on the device where you want to transfer this file."
+        ]
+    },
+    "faqs": [
+        {
+            "question": "How can I share files with end-to-end encryption?",
+            "answer": "Our service works on peer-to-peer (P2P) technology without involving any server. This allows you to securely share files with end-to-end encryption directly."
+        },
+        {
+            "question": "Is there a limit on the size of files that can be shared?",
+            "answer": "No, there is no file size limit for sharing. You can send and receive even larger files quickly, securely, and easily."
+        },
+        {
+            "question": "How can two devices connected with each other for sharing files?",
+            "answer": "Once your large file is uploaded to FileDropShare, we generate a unique ID for it. You can share this ID with another device, allowing them to connect and transfer the file."
+        }
+    ]
+}

@@ -6,7 +6,7 @@
     {%- for data in pageData.howTo.steps -%}
     <div class="howto-steps">
       <p class="mb-0">
-        <b class="step-number">{{ forloop.index }}</b>. {{ data }}
+        <b class="step-number d-block">{{ forloop.index }}</b>{{ data }}
       </p>
     </div>
     {%- endfor -%}
