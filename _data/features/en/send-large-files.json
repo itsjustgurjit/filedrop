@@ -60,29 +60,20 @@
     },
     "faqs": [
         {
-            "question": "What is peer to peer?",
-            "answer": "Peer-to-peer (P2P) is a type of networking that helps users send their files directly to other users without uploading and downloading them on a server, in no time."
+            "question": "Do I need to sign up to send large files with FileDropShare?",
+            "answer": "No, registration isn’t required. We give freedom to users to transfer large files instantly, free of charge."
         },
         {
-            "question": "What is a file sharing service? ",
-            "answer": "A file-sharing service plays a vital role when you need to transfer very large files quickly without physical storage available on devices. You can send, receive, and store large files by sharing links or QR codes for these files."
+            "question": "Can I share multiple big files by using a single click?",
+            "answer": "Yes, you can easily send multiple large files at once by selecting all files at once."
         },
         {
-            "question": "Is file sharing safe?",
-            "answer": "As there is no need to upload files for transfer on server, our service works on peer-to-peer networking, which does not involve any server. Instead, it works directly between two clients. So, File sharing is absolutly secure and safe."
+            "question": "Is file transfer possible between different devices?",
+            "answer": "Yes, you can easily send and receive large to large files between phones, tablets, laptops and desktops within seconds. "
         },
         {
-            "question": "How can i transfer files from phone to computer?",
-            "answer": "Select files from your mobile, and our tool will generate a link that you can share with your computer."
-        },
-
-        {
-            "question": "Do I need to upload large files to share them?",
-            "answer": "No, you don’t need to upload large files for sharing. You can simply copy and share a link or QR code to transfer the file directly."
-        },
-        {
-            "question": "How can i send and receive big files with not enough storage on device?",
-            "answer": "If you don’t have enough storage on your device to store or receive large files, our online file transfer platform provides a solution. You can transfer files using only links."
+            "question": "Is my file transfer secure?",
+            "answer": "Yes, Your large files (videos, photos, documents etc.) are 100% safe and secure during transfer by using our peer-to-peer (P2P) technology, which transfers data directly without uploading it to any server."
         }
     ]
 }
