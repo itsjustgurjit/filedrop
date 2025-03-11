@@ -563,6 +563,15 @@ progress::-webkit-progress-value {
 
 @media (max-width: 768px) { /* Mobile-friendly layout */
 
+
+  .link-container{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .share-link {
+
+    text-align: center;
+  }
   #receivedFilesContainer{
     width: 100% !important;
   }
@@ -694,6 +703,7 @@ footer {
   height: 25px;
 }
 #receivedFilesContainer {
+  position: relative;
   display: none;
   background: rgba(255, 255, 255);
   border-radius: 26px;
