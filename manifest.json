@@ -1,19 +1,19 @@
 {
-    "name": "Webzify",
-    "short_name": "Webzify",
+    "name": "FILEDROPSHARE",
+    "short_name": "FILEDROPSHARE",
     "icons": [
         {
-            "src": "./favicon.svg",
+            "src": "/favicon.svg",
             "type": "image/png",
             "sizes": "120x120"
         },
         {
-            "src": "./favicon.svg",
+            "src": "/favicon.svg",
             "type": "image/png",
             "sizes": "155x150"
         },
         {
-            "src": "./favicon.svg",
+            "src": "/favicon.svg",
             "type": "image/png",
             "sizes": "200x200"
         }
