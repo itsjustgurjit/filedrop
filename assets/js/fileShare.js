@@ -29,6 +29,9 @@ const connectionId = urlParams.get("connectionId");
 // Check if connectionId exists and autofill the input field
 async function startPeerConnection() {
   try {
+    let completed_text = document.querySelector('.completed')
+    completed_text.innerHTML = `<img height="89px" width="89px" src="/assets/images/loading.gif" alt="Loading..."> <br> please wait...`;
+    document.getElementById('dBTN').style.display = 'none'
     await initializePeer();
     if (connectionId) {
       //   Automatically connect when peer is ready
@@ -511,11 +514,9 @@ function sendNextChunk(file) {
 
 function prepareFileReception(fileInfo) {
   // Initialize variables for new file
-  let completed_text = document.querySelector('.completed')
-  completed_text.innerHTML = `<img height="89px" width="89px" src="/assets/images/loading.gif" alt="Loading..."> <br> please wait...`;
 
 
-  document.getElementById('dBTN').style.display = 'none'
+  
   
   currentFileInfo = fileInfo;
   receivedSize = 0;
