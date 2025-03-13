@@ -36,7 +36,7 @@ body {
 
 .logo span {
   font-family: Bebas Neue;
-  color: #dbff4b;
+  color: #000000;
   font-size: 1.6rem;
 }
 
@@ -742,9 +742,6 @@ footer {
 }
 
 /* white background extra code*/
-.nav {
-  filter: invert(1) brightness(0.1);
-}
 .main-heading {
   color: black;
 }
