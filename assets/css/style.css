@@ -45,7 +45,6 @@ body {
 .file-share-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   max-width: 950px;
   margin: 0 auto;
   padding: 20px;
@@ -182,9 +181,11 @@ progress::-webkit-progress-value {
   color: black;
   border: 3px solid #dbff4b;
   position: absolute;
-  max-width: 467px;
+  max-width: 100%;
+  width: 467px;
   backdrop-filter: blur(4px);
   bottom: 120px;
+  align-self: center;
 }
 
 .receiver-card h3 {
@@ -281,7 +282,7 @@ progress::-webkit-progress-value {
   text-decoration: none;
 }
 
-#fileInfo{
+#fileInfo {
   color: black !important;
 }
 .file-info {
@@ -561,18 +562,17 @@ progress::-webkit-progress-value {
   justify-content: center; /* Keeps PC layout the same */
 }
 
-@media (max-width: 768px) { /* Mobile-friendly layout */
+@media (max-width: 768px) {
+  /* Mobile-friendly layout */
 
-
-  .link-container{
+  .link-container {
     flex-direction: column;
     gap: 10px;
   }
   .share-link {
-
     text-align: center;
   }
-  #receivedFilesContainer{
+  #receivedFilesContainer {
     width: 100% !important;
   }
   .howto-steps {
@@ -580,22 +580,21 @@ progress::-webkit-progress-value {
     max-width: 350px; /* Slightly bigger for mobile */
     text-align: center;
   }
-  .footer-trademark{
+  .footer-trademark {
     display: flex !important;
     flex-direction: column;
     align-items: start !important;
   }
-  .footer-static-links{
+  .footer-static-links {
     display: flex !important;
     flex-direction: column;
     /* margin-top: 1rem; */
   }
-  .trademark-message{
+  .trademark-message {
     margin-top: 1rem;
     order: 2;
   }
 }
-
 
 /* feature highlights css */
 .feature-highlights {
@@ -647,7 +646,7 @@ footer {
 .add-file-button {
   margin-top: 3rem;
 }
-.footer-section{
+.footer-section {
   padding: 3rem;
 }
 
@@ -655,7 +654,7 @@ footer {
   footer {
     padding: 3rem 0;
   }
-  .footer-section{
+  .footer-section {
     padding: 0px;
   }
   .container {
@@ -792,7 +791,7 @@ footer {
   font-size: 1.3rem;
 }
 
-.faq_wrapper p:nth-child(2){
+.faq_wrapper p:nth-child(2) {
   font-size: 16px !important;
   color: red;
 }
@@ -808,7 +807,7 @@ footer {
 .menu a {
   color: black;
 }
-.menu-close{
+.menu-close {
   color: black;
 }
 .connectButton:hover {
@@ -816,24 +815,24 @@ footer {
   background: rgb(0, 0, 0);
 }
 
-footer{
+footer {
   background-color: #dbff4b;
 }
 
 .bottom-footer {
   /* display: none; */
 }
-.footer-link{
+.footer-link {
   color: #000;
 }
-.navbar-brand img{
-  filter: brightness(0.0);
+.navbar-brand img {
+  filter: brightness(0);
 }
 
-.scroll-top{
+.scroll-top {
   justify-content: flex-end;
 }
-.step-number{
+.step-number {
   font-size: 3rem;
 }
 .scroll-top {
@@ -851,7 +850,6 @@ footer{
   border-radius: 50px;
 }
 
-
 .file-drop-zone:active {
   scale: 1.05;
 }
@@ -864,6 +862,7 @@ footer{
 @media screen and (orientation: landscape) and (max-width: 1024px) {
   .receiver-card {
     position: unset;
+    align-self: center;
   }
   #status {
     position: unset;
@@ -879,10 +878,14 @@ footer{
     justify-content: space-evenly;
     padding: 18px;
   }
-  .id-section{
+  .id-section {
     margin: 2px;
   }
-  .id-section h3{
+  .id-section h3 {
     font-size: 15px;
   }
+}
+/* tv device fix */
+.file-share-container {
+  align-items: center !important;
 }
