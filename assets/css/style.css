@@ -853,3 +853,39 @@ footer{
   background: var(--primary-color);
   border-radius: 50px;
 }
+
+
+.file-drop-zone:active {
+  scale: 1.05;
+}
+
+.connectButton:active {
+  scale: 1.05;
+}
+/* landscape device or tabs */
+
+@media screen and (orientation: landscape) and (max-width: 1024px) {
+  .receiver-card {
+    position: unset;
+  }
+  #status {
+    position: unset;
+  }
+  .help-text {
+    display: none;
+  }
+  .qr-section {
+    margin: 3px;
+  }
+  #for-landscape {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 18px;
+  }
+  .id-section{
+    margin: 2px;
+  }
+  .id-section h3{
+    font-size: 15px;
+  }
+}
