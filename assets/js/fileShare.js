@@ -292,7 +292,7 @@ function generateShareLink() {
   return link;
 }
 function onFilesSelected(e) {
- 
+
   files = Array.from(e.target.files);
   if (files.length > 0) {
     updateFileInfo();
@@ -322,7 +322,7 @@ function createModalContent(link) {
                 <span class="share-link">${generateShareLink()}</span>
                 <button class="copy-button" onclick="copyLink('${generateShareLink()}')">Copy link</button>
             </div>
-            
+            <div id="for-landscape">
             <div class="id-section">
                 <h3>ENTER THIS ID IN THE RECEIVER DEVICE:</h3>
                 <div class="random-id">${peer.id}</div>
@@ -330,11 +330,11 @@ function createModalContent(link) {
             
             <div class="qr-section" id="qr-container"></div>
             
-            <div class="help-text">
-                <span>If you don't know how to share files, here the </span>
+            <div class="help-text pt-3">
+                <span>If you need help,please close the modal and go to help section</span>
             
             </div>
-            
+            </div>
            
         </div>
     `;
@@ -516,8 +516,8 @@ function prepareFileReception(fileInfo) {
   // Initialize variables for new file
 
 
-  
-  
+
+
   currentFileInfo = fileInfo;
   receivedSize = 0;
 
@@ -525,11 +525,11 @@ function prepareFileReception(fileInfo) {
   receivedChunks = new Array(fileInfo.totalChunks).fill(undefined);
   const shortFileName = fileInfo.name.length > 5 ? fileInfo.name.slice(0, 5) + "..." : fileInfo.name;
   console.log(shortFileName);
-  
+
   // Update UI
   updateFileInfo();
   updateStatus(
-    
+
     `Receiving ${shortFileName} (${fileInfo.index + 1}/${fileInfo.totalFiles})...`,
     "success"
   );
@@ -619,14 +619,14 @@ function completeFileReception() {
   if (currentFileInfo.index === currentFileInfo.totalFiles - 1) {
     connection.send({ type: "all-files-complete" });
 
-    
-    
+
+
     setTimeout(() => {
       document.querySelector("#dBTN").style.display = "none"
       document.querySelector("#receivedFiles").style.display = "none"
       document.querySelector(".completed").innerHTML = "🎉 Your files have been successfully transferred."
-    //   history.replaceState(null, "", location.pathname);
-    //     location.reload();
+      //   history.replaceState(null, "", location.pathname);
+      //     location.reload();
     }, 1000);
 
   }
@@ -676,16 +676,16 @@ setupEventListeners();
 // animate
 
 document.addEventListener("scroll", function () {
-    const scrollY = window.scrollY;
-    const element = document.querySelector(".file-share-container");
-  
-    // Increase max-width as you scroll (but cap it to avoid excessive size)
-    let newSize = Math.min(500, 100 + scrollY * 0.2); // Start from 100vw, grow up to 200vw
-    let newOpacity = Math.max(1 - scrollY / 500, 0); // Decrease opacity smoothly
-  
-    // Apply dynamic styles
-    element.style.setProperty("--max-width", `${newSize}vw`);
-    element.style.setProperty("--opacity", newOpacity);
-  });
-  
-  console.log('animate js is loaded')
+  const scrollY = window.scrollY;
+  const element = document.querySelector(".file-share-container");
+
+  // Increase max-width as you scroll (but cap it to avoid excessive size)
+  let newSize = Math.min(500, 100 + scrollY * 0.2); // Start from 100vw, grow up to 200vw
+  let newOpacity = Math.max(1 - scrollY / 500, 0); // Decrease opacity smoothly
+
+  // Apply dynamic styles
+  element.style.setProperty("--max-width", `${newSize}vw`);
+  element.style.setProperty("--opacity", newOpacity);
+});
+
+console.log('animate js is loaded')
