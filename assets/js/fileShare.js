@@ -135,18 +135,12 @@ function closeModal() {
 
 // Initialize everything
 function initializePeer() {
-  const options = {
+  peer = new Peer(generateShortId(), {
     host: PEER_HOST,
     port: 443,
     path: "/",
     secure: true,
-    // Add the API key as a query parameter
-    query: {
-      api_key: '1234'
-    }
-  };
-
-  peer = new Peer(generateShortId(), options);
+  });
 
   peer.on("open", onPeerOpen);
   peer.on("connection", handleConnection);
