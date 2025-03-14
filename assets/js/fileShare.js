@@ -264,14 +264,7 @@ function onDataReceived(data) {
 
 function onConnectionClose() {
   updateStatus("Connection closed", "warning");
-  connection_input_status.innerHTML = `<h3>Connect to Peer:</h3>
-    <input
-      type="text"
-      id="peerIdInput"
-      placeholder="Enter peer's connection ID"
-    />
-    <button class="connectButton" onclick="">Connect</button>
-  </div>`;
+  connection_input_status.innerHTML = ``;
   resetUI();
 }
 
