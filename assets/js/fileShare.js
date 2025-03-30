@@ -1,5 +1,5 @@
 
-const PEER_HOST = "serverside-file-share.onrender.com";
+const PEER_HOST = "serverside-file-share-0hn8.onrender.com";
 
 let peer = null;
 let connection = null;
