@@ -5,6 +5,9 @@ group :jekyll_plugins do
   gem "jekyll-sitemap"
   gem "jekyll-include-cache"
   gem 'jekyll-paginate'
+  gem 'csv'
+gem 'logger' # optional but recommended to silence the other warning
+
 end
 platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo", ">= 1", "< 3"
