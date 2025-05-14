@@ -4,7 +4,7 @@
   "main": "service_worker.js",
   
 "scripts": {
-  "tinacms": "npx tinacms dev"
+  "tinacms": "tinacms build"
 },
 
   "keywords": [],
