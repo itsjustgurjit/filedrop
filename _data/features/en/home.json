@@ -10,7 +10,7 @@
             "image": "/assets/images/feature-highlight-images/direct.svg",
             "title": "Direct File Transfer",
             "description": [
-                "Share your file online directly from one device to another without involving any server by just copy paste a link or Qr code."
+                "Share your file online directly from one device to another without involving any server by just copy paste a file link or Qr code."
             ]
         },
         {
@@ -38,7 +38,7 @@
             "image": "/assets/images/feature-highlight-images/free.svg",
             "title": "Free to use",
             "description": [
-                "No charges for transferring large files between devices. You can easily share huge files without requiring sign-up or registration."
+                "No charges for transferring large files between devices. You can easily share huge files online without requiring sign-up, registration or login."
             ]
         },
         {
@@ -83,6 +83,22 @@
         {
             "question": "How can i send and receive big files with not enough storage on device?",
             "answer": "If you don’t have enough storage on your device to store or receive large files, our online file transfer platform provides a solution. You can transfer files using only links."
+        },
+        {
+            "question": "How do I send a file as a link without login?",
+            "answer": "Click 'Add File', pick your file and FileDropShare instantly generates a share link and QR code. Send that link to anyone and they can download the file straight from your device. It is file sharing without login: no account, no registration."
+        },
+        {
+            "question": "Is FileDropShare a free file sharing site like Dropbox Transfer or other file hosting services?",
+            "answer": "It is a free online file transfer tool, but it works differently from cloud file hosting. Your file is not stored on our servers. It goes peer to peer, directly from your device to the receiver's, so there is no upload wait and no storage limit to hit. Keep your browser tab open until the download finishes."
+        },
+        {
+            "question": "Can I transfer a zip file or a folder?",
+            "answer": "Yes, you can share a zip file of any size like any other file. To send a folder, compress it into a zip first, then add the zip file and share the link."
+        },
+        {
+            "question": "Where can I upload files for free without registration?",
+            "answer": "FileDropShare lets you add and share files for free with no registration or login. Select your file, copy the link or QR code, and send it to anyone. It works on Windows, Mac, Android and iPhone."
         }
     ]
 }

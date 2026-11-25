@@ -1,5 +1,5 @@
-{% assign lang = page.lang %}
-{% assign footerData = site.data.footer[lang].data %}
+{% assign lang = page.lang | default: 'en' %}
+{% assign footerData = site.data.footer[lang].data | default: site.data.footer['en'].data %}
 
 <footer class="mt-5 bottom-footer">
   <div class="container-lg">
@@ -20,10 +20,13 @@
               </a>
               {%- endfor -%}
             </div>
+            <div class="footer-ph-badge text-start">
+              {%- include producthunt-badge.html -%}
+            </div>
           </div>
 
 
-      
+
 
           <div class="col-md-3">
 
@@ -34,11 +37,11 @@
               {%- endfor -%}
             </ul>
           </div>
-        
+
 
           <div class="col-md-3">
             <div class="footer-category">Quick Links</div>
-           
+
             <ul class="footer-list">
               {%- for link in footerData.company -%}
               <li><a class="footer-link" href="{{link.url}}">{{link.name}}</a></li>
@@ -47,9 +50,9 @@
           </div>
 
           <div class="col-md-3">
-           
+
             <div class="footer-category">Quick Links</div>
-         
+
             <ul class="footer-list">
               {%- for link in footerData.freeTools -%}
               <li><a class="footer-link" href="{{link.url}}">{{link.name}}</a></li>
@@ -70,9 +73,10 @@
           </div>
         </div>
 
-        
+
         <div class="scroll-top" onclick="scrollToTop()">
-          <img width="25px" height="25px" src="/assets/images/social-images/top-f-free-file-share-com.svg" alt="down-arrow">
+          <img width="25px" height="25px" src="/assets/images/social-images/top-f-free-file-share-com.svg"
+            alt="down-arrow">
         </div>
       </div>
     </div>

@@ -807,6 +807,14 @@ footer {
 .menu a {
   color: black;
 }
+.menu ul li a {
+  display: inline-block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.menu ul li a:hover {
+  transform: translateX(4px);
+  opacity: 0.6;
+}
 .menu-close {
   color: black;
 }

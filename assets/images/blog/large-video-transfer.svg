@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="warmWhiteBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff7ed"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <radialGradient id="orangeGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#ea580c" stop-opacity="0.12"/>
+      <stop offset="60%" stop-color="#f59e0b" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.07"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#warmWhiteBg)"/>
+  <rect width="1200" height="630" fill="url(#orangeGlow)"/>
+
+  <!-- Speed motion streaks -->
+  <g stroke="#fed7aa" opacity="0.6" stroke-width="2">
+    <line x1="120" y1="200" x2="480" y2="200" stroke-dasharray="25 15"/>
+    <line x1="220" y1="270" x2="520" y2="270" stroke-dasharray="35 15"/>
+    <line x1="720" y1="230" x2="1080" y2="230" stroke-dasharray="30 15"/>
+    <line x1="680" y1="390" x2="1020" y2="390" stroke-dasharray="40 20"/>
+  </g>
+
+  <!-- Central Video Player Card -->
+  <g transform="translate(600, 315)">
+    <rect x="-160" y="-95" width="320" height="190" rx="20" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" filter="url(#shadow)"/>
+    <!-- Play button circle -->
+    <circle cx="0" cy="-15" r="32" fill="#ea580c"/>
+    <polygon points="-8,-28 12,-15 -8,-2" fill="#ffffff"/>
+    
+    <!-- Specs Tags -->
+    <g transform="translate(0, 48)">
+      <rect x="-135" y="-12" width="80" height="24" rx="6" fill="#ffedd5"/>
+      <text x="-95" y="4" text-anchor="middle" fill="#c2410c" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="12">4K / 8K RAW</text>
+      
+      <rect x="-45" y="-12" width="90" height="24" rx="6" fill="#f1f5f9"/>
+      <text x="0" y="4" text-anchor="middle" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="12">PRORES 422</text>
+      
+      <rect x="55" y="-12" width="80" height="24" rx="6" fill="#dcfce7"/>
+      <text x="95" y="4" text-anchor="middle" fill="#15803d" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="12">50GB+ FAST</text>
+    </g>
+  </g>
+
+  <!-- Top Badge -->
+  <g transform="translate(600, 75)">
+    <rect x="-130" y="-18" width="260" height="36" rx="18" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="0" y="6" text-anchor="middle" fill="#c2410c" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="12" letter-spacing="1.5">LARGE ASSET WORKFLOW</text>
+  </g>
+</svg>

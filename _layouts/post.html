@@ -1,44 +1,285 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang }}">
+<html lang="{{ page.lang | default: 'en' }}">
 {%- include head.html -%}
-
-<style>
-    .language-dropdown{
-        display: none;
-    }
-    h1{
-        font-weight: 600 !important;
-    }
-   
-   .post-content img{
-        width: 100%;
-        border-radius: 22px;
-    }
-    .card-title a {
-        text-decoration: none;
-        color: #000;
-    }
-    p{
-        font-weight: 300;
-        font-size: 16px;
-        margin-bottom: 1rem;
-    }
-</style>
+<link rel="stylesheet" href="/assets/css/blog.css">
 
 <body>
-    {%- include navbar.html -%}
-    <div class="container my-5">
-        <div class="row">
-            <div class="col-lg-8  mx-auto">
-                <div class="p-5 post-content">
-                    <h1 class="h1">{{ page.title }}</h1>
-                    {{ content }}
-                </div>
+  <!-- Fixed Reading Progress Bar -->
+  <div id="readingProgressBar"></div>
+
+  {%- include navbar.html -%}
+
+  <main class="post-page-wrapper">
+    <div class="container">
+      
+      <!-- Article Header -->
+      <header class="post-header">
+        <nav class="post-breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/blog/">Blog</a>
+          {%- if page.category -%}
+          <span>/</span>
+          <span class="text-dark font-weight-bold">{{ page.category }}</span>
+          {%- endif -%}
+        </nav>
+
+        {%- if page.category -%}
+        <div class="post-header-badge">{{ page.category }}</div>
+        {%- endif -%}
+
+        <h1 class="post-main-title">{{ page.title }}</h1>
+
+        {%- if page.description -%}
+        <p class="post-lead">{{ page.description }}</p>
+        {%- endif -%}
+
+        <div class="post-header-meta">
+          <div class="post-header-author">
+            <img src="{{ page.author_avatar | default: site.blog.author_avatar | default: '/assets/images/blog/authors/team.svg' }}" alt="{{ page.author }}">
+            <div>
+              <div class="author-name">{{ page.author | default: site.blog.author | default: "FileDrop Team" }}</div>
+              <span class="post-date">{{ page.author_role | default: "Core Contributor" }}</span>
             </div>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <span class="text-muted small">📅 {{ page.date | date: "%B %d, %Y" }}</span>
+            <span class="reading-pill">⏱️ {{ page.reading_time | default: "5 min read" }}</span>
+          </div>
         </div>
+      </header>
+
+      <!-- Featured Image Banner -->
+      {%- if page.image -%}
+      <div class="post-hero-image-wrap">
+        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+      </div>
+      {%- endif -%}
+
+      <!-- Main Content and Sidebar Layout -->
+      <div class="row justify-content-center">
+        <!-- Main Prose Content -->
+        <div class="col-lg-8">
+          <article class="post-content" id="postArticleContent">
+            {{ content }}
+          </article>
+
+          <!-- Article Tags -->
+          {%- if page.tags and page.tags.size > 0 -%}
+          <div class="d-flex align-items-center flex-wrap gap-2 my-4 pt-3 border-top">
+            <span class="text-muted small font-weight-bold mr-2">Tags:</span>
+            {%- for tag in page.tags -%}
+            <span class="badge bg-light text-dark border px-3 py-2 rounded-pill font-weight-normal">#{{ tag }}</span>
+            {%- endfor -%}
+          </div>
+          {%- endif -%}
+
+          <!-- Author Bio Box -->
+          <div class="post-author-box">
+            <img class="post-author-avatar" src="{{ page.author_avatar | default: site.blog.author_avatar | default: '/assets/images/blog/authors/team.svg' }}" alt="{{ page.author }}">
+            <div class="post-author-info">
+              <h4>Written by {{ page.author | default: site.blog.author | default: "FileDrop Team" }}</h4>
+              <p>{{ site.blog.author_bio | default: "Building real-time, browser-native file sharing infrastructure with zero server storage and end-to-end encryption." }}</p>
+              <div class="small text-muted">Published in <strong>{{ page.category | default: "Technology" }}</strong> on {{ page.date | date: "%B %d, %Y" }}</div>
+            </div>
+          </div>
+
+          <!-- Prev / Next Navigation -->
+          <div class="post-navigation">
+            {%- if page.previous -%}
+            <a href="{{ page.previous.url | relative_url }}" class="nav-post-card">
+              <div class="nav-label">← Previous Article</div>
+              <div class="nav-title">{{ page.previous.title }}</div>
+            </a>
+            {%- else -%}
+            <div></div>
+            {%- endif -%}
+
+            {%- if page.next -%}
+            <a href="{{ page.next.url | relative_url }}" class="nav-post-card text-md-end">
+              <div class="nav-label">Next Article →</div>
+              <div class="nav-title">{{ page.next.title }}</div>
+            </a>
+            {%- endif -%}
+          </div>
+
+          <!-- Related Articles Grid -->
+          <div class="my-5">
+            <h3 class="h4 font-weight-bold mb-4">Recommended Reading</h3>
+            <div class="row">
+              {%- assign related_count = 0 -%}
+              {%- for other in site.posts -%}
+                {%- if other.url != page.url and related_count < 2 -%}
+                {%- assign related_count = related_count | plus: 1 -%}
+                <div class="col-md-6 mb-3">
+                  <div class="article-card h-100">
+                    <div class="article-card-thumb">
+                      <a href="{{ other.url | relative_url }}">
+                        <img src="{{ other.image | default: '/assets/images/blog/p2p-webrtc-transfer.svg' }}" alt="{{ other.title }}" loading="lazy">
+                      </a>
+                    </div>
+                    <div class="article-card-body p-3">
+                      <h4 class="h6 font-weight-bold mb-2">
+                        <a class="text-dark text-decoration-none" href="{{ other.url | relative_url }}">{{ other.title }}</a>
+                      </h4>
+                      <span class="small text-muted">{{ other.date | date: "%b %d, %Y" }} • {{ other.reading_time | default: "5 min read" }}</span>
+                    </div>
+                  </div>
+                </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sticky Sidebar -->
+        <div class="col-lg-4 d-none d-lg-block">
+          <aside class="post-sidebar">
+            
+            <!-- Table of Contents -->
+            <div class="sidebar-widget" id="tocWidget">
+              <div class="sidebar-title">Table of Contents</div>
+              <nav id="tableOfContentsNav">
+                <ul class="toc-list" id="tocList"></ul>
+              </nav>
+            </div>
+
+            <!-- Share Buttons Widget -->
+            <div class="sidebar-widget">
+              <div class="sidebar-title">Share Article</div>
+              <div class="share-buttons">
+                <!-- Copy Link -->
+                <button type="button" class="share-btn-item" id="copyShareLinkBtn" title="Copy Article Link">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                </button>
+                <!-- Twitter / X -->
+                <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url | append: page.url | url_encode }}" target="_blank" rel="noopener noreferrer" class="share-btn-item" title="Share on Twitter / X">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url | append: page.url | url_encode }}" target="_blank" rel="noopener noreferrer" class="share-btn-item" title="Share on LinkedIn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </a>
+                <!-- WhatsApp -->
+                <a href="https://api.whatsapp.com/send?text={{ page.title | url_encode }}%20{{ site.url | append: page.url | url_encode }}" target="_blank" rel="noopener noreferrer" class="share-btn-item" title="Share on WhatsApp">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                  </svg>
+                </a>
+              </div>
+              <div id="copyFeedback" class="small text-success mt-2 d-none font-weight-bold">✓ Link copied to clipboard!</div>
+            </div>
+
+            <!-- Quick File Transfer Promo Widget -->
+            <div class="promo-widget">
+              <span class="badge bg-dark text-warning mb-2 border border-warning">Instant & Private</span>
+              <h4>Send Files Without Cloud Limits</h4>
+              <p>Experience direct peer-to-peer file transfer in your browser. Zero cloud storage, fully encrypted.</p>
+              <a href="/" class="promo-btn">Launch FileDropShare</a>
+            </div>
+
+          </aside>
+        </div>
+      </div>
+
     </div>
-    {%- include footer.html -%}
+  </main>
 
+  {%- include footer.html -%}
+
+  <!-- Reading Progress Bar & Table of Contents Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 1. Reading Progress Bar
+      const progressBar = document.getElementById('readingProgressBar');
+      window.addEventListener('scroll', function() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        if (progressBar) {
+          progressBar.style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+        }
+      });
+
+      // 2. Dynamic Table of Contents Generation
+      const articleContent = document.getElementById('postArticleContent');
+      const tocList = document.getElementById('tocList');
+      const tocWidget = document.getElementById('tocWidget');
+
+      if (articleContent && tocList) {
+        const headings = articleContent.querySelectorAll('h2, h3');
+        if (headings.length > 0) {
+          headings.forEach((heading, idx) => {
+            const headingText = heading.textContent.trim();
+            let headingId = heading.getAttribute('id');
+            if (!headingId) {
+              headingId = 'heading-' + idx + '-' + headingText.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+              heading.setAttribute('id', headingId);
+            }
+
+            const li = document.createElement('li');
+            if (heading.tagName.toLowerCase() === 'h3') {
+              li.style.paddingLeft = '14px';
+              li.style.fontSize = '0.85em';
+            }
+
+            const a = document.createElement('a');
+            a.href = '#' + headingId;
+            a.textContent = headingText;
+            li.appendChild(a);
+            tocList.appendChild(li);
+          });
+
+          // Scroll spy for Table of Contents
+          window.addEventListener('scroll', function() {
+            const fromTop = window.scrollY + 120;
+            const tocLinks = tocList.querySelectorAll('a');
+
+            headings.forEach(heading => {
+              if (heading.offsetTop <= fromTop && (heading.offsetTop + heading.offsetHeight) > fromTop - 200) {
+                const id = heading.getAttribute('id');
+                tocLinks.forEach(link => {
+                  if (link.getAttribute('href') === '#' + id) {
+                    link.classList.add('active');
+                  } else {
+                    link.classList.remove('active');
+                  }
+                });
+              }
+            });
+          });
+        } else if (tocWidget) {
+          tocWidget.style.display = 'none';
+        }
+      }
+
+      // 3. Share Copy Link functionality
+      const copyBtn = document.getElementById('copyShareLinkBtn');
+      const copyFeedback = document.getElementById('copyFeedback');
+      if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+          navigator.clipboard.writeText(window.location.href).then(() => {
+            if (copyFeedback) {
+              copyFeedback.classList.remove('d-none');
+              setTimeout(() => {
+                copyFeedback.classList.add('d-none');
+              }, 2500);
+            }
+          }).catch(err => {
+            console.error('Failed to copy URL:', err);
+          });
+        });
+      }
+    });
+  </script>
+  <script src="/assets/js/nav.js"></script>
 </body>
-
 </html>

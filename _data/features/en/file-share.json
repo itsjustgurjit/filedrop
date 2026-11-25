@@ -1,8 +1,8 @@
 {
     "Language": "English",
     "htmlLangAtt": "en",
-    "title": "Share Files Online for Free – No Limits, No ads",
-    "meta": "Transfer big files instantly with FileDropShare—fast, secure, and completely free, no sign-up required.",
+    "title": "File Sharing Online Free – No Registration, No Limits",
+    "meta": "Free online file sharing without registration. Upload and share big files instantly with FileDropShare—fast, secure, peer-to-peer, no sign-up or login required.",
     "h1": "File Share",
     "h2": "Fast & Secure File Sharing – Peer-to-Peer, No Signup, Just Click, Share & Download",
     "featureHighlights": [
@@ -10,14 +10,14 @@
              "image": "/assets/images/feature-highlight-images/users.svg",
             "title": "Quick & Easy Transfers",
             "description": [
-                "Send large files effortlessly with a simple copy-paste link or QR code—no technical skills required!"
+                "Send large files effortlessly with a simple copy-paste share link or QR code—no technical skills required."
             ]
         },
         {
              "image": "/assets/images/feature-highlight-images/free.svg",
             "title": "100% Free to Use",
             "description": [
-                "Transfer huge files without any cost, registration, or hidden fees—completely free forever."
+                "Transfer huge files without any cost, registration, or hidden fees—a completely free file share service with no account or login."
             ]
         },
         {
@@ -70,6 +70,22 @@
         {
             "question": "How can two devices connected with each other for sharing files?",
             "answer": "Once your large file is uploaded to FileDropShare, we generate a unique ID for it. You can share this ID with another device, allowing them to connect and transfer the file."
+        },
+        {
+            "question": "Is this a free file sharing website with no registration?",
+            "answer": "Yes. FileDropShare is a free file sharing website where you can share files online without registration, login or account. Add your file, share the link or QR code, and the other person downloads it directly."
+        },
+        {
+            "question": "How do I share documents, PDFs and zip files online for free?",
+            "answer": "Add any document, PDF, image, video or zip file, then copy the generated link and send it by email, chat or QR code. The receiver opens the link and downloads the file directly from your device."
+        },
+        {
+            "question": "How is a peer to peer file sharing site different from cloud file hosting?",
+            "answer": "Cloud hosting stores your file on a company's server and gives you a download link. On a peer to peer file sharing site like FileDropShare the file moves directly between the two devices, so nothing is stored online and the link stops working once you close the page."
+        },
+        {
+            "question": "Where can I upload files for free to share them online?",
+            "answer": "You can add your files right here on FileDropShare, free and without an account. Instead of uploading to a cloud server, the file is shared directly from your device, so you get a link instantly and the receiver downloads it straight away."
         }
     ]
 }

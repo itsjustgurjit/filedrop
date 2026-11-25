@@ -16,6 +16,11 @@
         "logo": "/assets/images/social-images/instagram-with-circle-fileshare-com.svg",
         "url": "https://www.instagram.com/",
         "title": "instagram"
+      },
+      {
+        "logo": "/assets/images/social-images/producthunt-filedropshare.svg",
+        "url": "https://www.producthunt.com/@filedropshare",
+        "title": "producthunt"
       }
     ],
     "company": [

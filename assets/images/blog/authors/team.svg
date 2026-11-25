@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="avatarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="60" fill="url(#avatarBg)"/>
+  <circle cx="60" cy="60" r="56" fill="none" stroke="#93c5fd" stroke-width="2.5"/>
+  <!-- Modern Clean Minimalist Icon -->
+  <g transform="translate(36, 36)">
+    <rect x="4" y="8" width="40" height="32" rx="8" fill="#2563eb"/>
+    <path d="M16 24 L24 16 L32 24 M24 16 L24 32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

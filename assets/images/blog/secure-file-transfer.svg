@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="secWhiteBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0fdf4"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <radialGradient id="greenGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.15"/>
+      <stop offset="60%" stop-color="#06b6d4" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.07"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#secWhiteBg)"/>
+  <rect width="1200" height="630" fill="url(#greenGlow)"/>
+
+  <!-- Shield in center -->
+  <g transform="translate(600, 315)">
+    <!-- Big Shield Background -->
+    <path d="M0 -140 C85 -120 140 -90 140 0 C140 100 75 160 0 195 C-75 160 -140 100 -140 0 C-140 -90 -85 -120 0 -140 Z" fill="#ffffff" stroke="#10b981" stroke-width="3" filter="url(#shadow)"/>
+    <!-- Inner Lock -->
+    <rect x="-32" y="-10" width="64" height="56" rx="8" fill="#10b981"/>
+    <path d="M-20 -10 L-20 -32 C-20 -48 20 -48 20 -32 L20 -10" fill="none" stroke="#10b981" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="0" cy="14" r="6" fill="#ffffff"/>
+    <rect x="-2.5" y="14" width="5" height="14" fill="#ffffff"/>
+  </g>
+
+  <!-- Left Feature Card -->
+  <g transform="translate(250, 315)">
+    <rect x="-115" y="-55" width="230" height="110" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow)"/>
+    <circle cx="-75" cy="0" r="18" fill="#e0f2fe"/>
+    <path d="M-82 0 L-77 5 L-68 -4" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="18" y="-8" text-anchor="middle" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="15">AES-256 GCM</text>
+    <text x="18" y="16" text-anchor="middle" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="12.5">End-to-End Encrypted</text>
+  </g>
+
+  <!-- Right Feature Card -->
+  <g transform="translate(950, 315)">
+    <rect x="-115" y="-55" width="230" height="110" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow)"/>
+    <circle cx="-75" cy="0" r="18" fill="#dcfce7"/>
+    <path d="M-82 0 L-77 5 L-68 -4" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="18" y="-8" text-anchor="middle" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="15">ZERO KNOWLEDGE</text>
+    <text x="18" y="16" text-anchor="middle" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="12.5">No Cloud Logs or Storage</text>
+  </g>
+
+  <!-- Top Badge -->
+  <g transform="translate(600, 75)">
+    <rect x="-110" y="-18" width="220" height="36" rx="18" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="0" y="6" text-anchor="middle" fill="#15803d" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="12" letter-spacing="1.5">DATA PRIVACY &amp; SECURITY</text>
+  </g>
+</svg>
