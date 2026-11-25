@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="whiteBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <radialGradient id="meshGlow" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#d4ff29" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#whiteBg)"/>
+  <rect width="1200" height="630" fill="url(#meshGlow)"/>
+
+  <!-- Subtle Blueprint Grid Pattern -->
+  <g opacity="0.45" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4">
+    <line x1="0" y1="126" x2="1200" y2="126"/>
+    <line x1="0" y1="252" x2="1200" y2="252"/>
+    <line x1="0" y1="378" x2="1200" y2="378"/>
+    <line x1="0" y1="504" x2="1200" y2="504"/>
+    <line x1="240" y1="0" x2="240" y2="630"/>
+    <line x1="480" y1="0" x2="480" y2="630"/>
+    <line x1="720" y1="0" x2="720" y2="630"/>
+    <line x1="960" y1="0" x2="960" y2="630"/>
+  </g>
+
+  <!-- Top Badge -->
+  <g transform="translate(600, 75)">
+    <rect x="-120" y="-18" width="240" height="36" rx="18" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <circle cx="-85" cy="0" r="4.5" fill="#10b981"/>
+    <text x="12" y="5" text-anchor="middle" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="12" letter-spacing="1.5">P2P WEBRTC NETWORK</text>
+  </g>
+
+  <!-- Direct Data Stream Curve -->
+  <path d="M 330 315 C 470 210, 730 420, 870 315" fill="none" stroke="#0ea5e9" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 8"/>
+  <path d="M 330 315 C 470 210, 730 420, 870 315" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Stream Center Tag -->
+  <g transform="translate(600, 315)">
+    <rect x="-135" y="-22" width="270" height="44" rx="22" fill="#ffffff" stroke="#10b981" stroke-width="2" filter="url(#cardShadow)"/>
+    <text x="0" y="6" text-anchor="middle" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="14">⚡ DIRECT RTCDataChannel</text>
+  </g>
+
+  <!-- Sender Node (Left Card) -->
+  <g transform="translate(240, 315)">
+    <rect x="-110" y="-105" width="220" height="210" rx="20" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <!-- Laptop graphic -->
+    <rect x="-42" y="-55" width="84" height="54" rx="6" fill="#f8fafc" stroke="#0284c7" stroke-width="2.5"/>
+    <line x1="-55" y1="5" x2="55" y2="5" stroke="#0284c7" stroke-width="3" stroke-linecap="round"/>
+    <rect x="-24" y="-40" width="48" height="24" rx="3" fill="#e0f2fe"/>
+    
+    <text x="0" y="45" text-anchor="middle" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="17">SENDER PEER</text>
+    <text x="0" y="68" text-anchor="middle" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="13">Browser Memory</text>
+    <rect x="-45" y="80" width="90" height="20" rx="10" fill="#dcfce7"/>
+    <text x="0" y="94" text-anchor="middle" fill="#15803d" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="10.5">LOCAL STREAM</text>
+  </g>
+
+  <!-- Receiver Node (Right Card) -->
+  <g transform="translate(960, 315)">
+    <rect x="-110" y="-105" width="220" height="210" rx="20" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <!-- Smartphone graphic -->
+    <rect x="-24" y="-60" width="48" height="82" rx="8" fill="#f8fafc" stroke="#10b981" stroke-width="2.5"/>
+    <line x1="-10" y1="-48" x2="10" y2="-48" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="12" r="3.5" fill="#10b981"/>
+    
+    <text x="0" y="45" text-anchor="middle" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="17">RECEIVER PEER</text>
+    <text x="0" y="68" text-anchor="middle" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="13">Direct Download</text>
+    <rect x="-45" y="80" width="90" height="20" rx="10" fill="#e0f2fe"/>
+    <text x="0" y="94" text-anchor="middle" fill="#0369a1" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="10.5">ZERO STORAGE</text>
+  </g>
+</svg>

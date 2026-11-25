@@ -1,55 +1,99 @@
 <head>
-  {% assign folder = page.folderName %}
-  {% assign file = page.fileName %}
-  {% assign lang = page.lang %}
-  {% assign pageData = site.data[folder][lang][file] %}
-  {% assign title = pageData.title | default: page.title | default: site.title %}
-  {% assign keywords = pageData.keywords %}{% assign favicon = site.favicon %}
-
-
+  {%- assign folder = page.folderName -%}
+  {%- assign file = page.fileName -%}
+  {%- assign lang = page.lang | default: "en" -%}
+  {%- assign pageData = site.data[folder][lang][file] -%}
+  
+  {%- comment -%} Title & Description Determination {%- endcomment -%}
+  {%- assign page_title = pageData.title | default: page.title | default: site.title -%}
   {%- if page.layout == "post" -%}
-  {%- assign description = page.description | default: page.content | markdownify | strip_html | truncatewords: 50 |
-  default: page.excerpt | default: site.description -%}
+    {%- assign page_description = page.description | default: page.content | markdownify | strip_html | truncatewords: 45 | default: site.description -%}
   {%- else -%}
-  {% assign description = pageData.meta | default: page.description | default: site.description %}
+    {%- assign page_description = pageData.meta | default: page.description | default: site.description -%}
   {%- endif -%}
 
+  {%- assign site_name = "FileDropShare" -%}
+  {%- assign twitter_handle = "filedropshare" -%}
+  {%- assign page_keywords = pageData.keywords | default: page.keywords | default: page.tags | join: ', ' | default: "file transfer, p2p file share, send large files, share files online, webrtc file sharing, free file sharing, secure file transfer" -%}
+  {%- assign canonical_url = page.url | replace: 'index.html', '' | absolute_url -%}
+  {%- assign og_image = page.image | default: site.og_image | default: '/assets/images/blog/p2p-webrtc-transfer.svg' | absolute_url -%}
+
   <meta charset="UTF-8">
-  <title>{{ title }}</title>
-  <meta name="description" content="{{description}}" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="canonical" href="{{site.url | append:  page.url}}" />
-  <link rel="shortcut icon" href="{{favicon}}" />
-  <link rel="icon" href="{{site.url}}{{favicon}}">
-  <link rel="apple-touch-icon" href="{{site.url}}{{favicon}}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta property="og:site_name" content="{{site.name}}" />
-  <meta property="og:title" content="{{title}}" />
-  <meta property="og:description" content="{{description}}" />
-  <meta property="og:image" content="{{site.url}}{{favicon}}" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{site.url | append:  page.url}}" />
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@{{site.name}}">
-  <meta name="twitter:creator" content="@{{site.name}}">
-  <meta name="twitter:title" content="{{title}}" />
-  <meta name="twitter:description" content="{{description}}" />
-  <meta name="twitter:image" content="{{site.url}}{{favicon}}" />
-  <link rel="manifest" href="./manifest.json">
-  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>{{ page_title }}</title>
+  <meta name="title" content="{{ page_title }}">
+  <meta name="description" content="{{ page_description | strip_newlines | replace: '"', '&quot;' }}">
+  {%- if page_keywords and page_keywords != "" -%}
+  <meta name="keywords" content="{{ page_keywords | replace: '"', '&quot;' }}">
+  {%- endif -%}
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="theme-color" content="#dbff4b">
+  <meta name="msapplication-TileColor" content="#dbff4b">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:site_name" content="{{ site_name }}">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_description | strip_newlines | replace: '"', '&quot;' }}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  <meta property="og:locale" content="en_US">
+  {%- if page.layout == "post" -%}
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+  <meta property="article:modified_time" content="{{ page.last_modified_at | default: page.date | date_to_xmlschema }}">
+  <meta property="article:author" content="{{ page.author | default: site.blog.author }}">
+  {%- if page.category -%}<meta property="article:section" content="{{ page.category }}">{%- endif -%}
+  {%- for tag in page.tags -%}
+  <meta property="article:tag" content="{{ tag }}">
+  {%- endfor -%}
+  {%- else -%}
+  <meta property="og:type" content="website">
+  {%- endif -%}
+  <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:image:alt" content="{{ page_title }}">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@{{ twitter_handle }}">
+  <meta name="twitter:creator" content="@{{ twitter_handle }}">
+  <meta name="twitter:title" content="{{ page_title }}">
+  <meta name="twitter:description" content="{{ page_description | strip_newlines | replace: '"', '&quot;' }}">
+  <meta name="twitter:image" content="{{ og_image }}">
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- RSS Feed Link -->
+  <link rel="alternate" type="application/atom+xml" title="{{ site.name }} Feed" href="{{ '/feed.xml' | absolute_url }}">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
+
+  <!-- Structured Data JSON-LD -->
   {%- include structuredata.html -%}
-  
+
+  <!-- Service Worker Registration -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service_worker.js')
-          .then((reg) => console.log('Success: ', reg.scope))
-          .catch((err) => console.log('Failure: ', err));
-      })
+        navigator.serviceWorker.register('/service_worker.js')
+          .then((reg) => console.log('ServiceWorker registered with scope: ', reg.scope))
+          .catch((err) => console.log('ServiceWorker registration failed: ', err));
+      });
     }
   </script>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2554843498051284" crossorigin="anonymous"></script>
+
+  <!-- Google Analytics -->
   {% if jekyll.environment == 'production' %}
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-F959CLRJR0"></script>
   <script>
@@ -58,5 +102,5 @@
     gtag('js', new Date());
     gtag('config', 'G-F959CLRJR0');
   </script>
-  {%- endif -%}
+  {% endif %}
 </head>

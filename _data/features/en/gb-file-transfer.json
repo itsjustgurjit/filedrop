@@ -74,6 +74,14 @@
         {
             "question": "How many types of devices does FileDropShare support?",
             "answer": "You can send and receive large files (videos, documents, pictures, etc.) from any device, including Windows, macOS, Android, and Linux, using FileDropShare."
+        },
+        {
+            "question": "Can I do a large file transfer of 10GB or more for free?",
+            "answer": "Yes. You can send files of 10GB or more for free, since FileDropShare doesn't upload your file to a server. The file goes directly from your device to the receiver's device, and you don't need an account."
+        },
+        {
+            "question": "Is there a free way to send a file by link without waiting for upload?",
+            "answer": "Yes. Add your file and share the link right away. There is no upload queue, because the receiver downloads it directly from your device."
         }
     ]
 }

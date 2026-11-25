@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="whiteBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdfbf7"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <radialGradient id="softVioletGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.12"/>
+      <stop offset="70%" stop-color="#3b82f6" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#whiteBg)"/>
+  <rect width="1200" height="630" fill="url(#softVioletGlow)"/>
+
+  <!-- Concentric Orbit Rings -->
+  <circle cx="600" cy="315" r="230" fill="none" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <circle cx="600" cy="315" r="140" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <!-- Central Hub -->
+  <g transform="translate(600, 315)">
+    <circle r="65" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5" filter="url(#shadow)"/>
+    <path d="M-18 -10 L18 -10 M-18 0 L18 0 M-18 10 L8 10" stroke="#8b5cf6" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="14" cy="10" r="3" fill="#8b5cf6"/>
+    <text x="0" y="95" text-anchor="middle" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="15" letter-spacing="1">UNIVERSAL HUB</text>
+  </g>
+
+  <!-- Node 1: iPhone (Top Left) -->
+  <g transform="translate(390, 200)">
+    <rect x="-60" y="-45" width="120" height="90" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow)"/>
+    <!-- Phone icon -->
+    <rect x="-10" y="-30" width="20" height="34" rx="4" fill="none" stroke="#6366f1" stroke-width="2"/>
+    <circle cx="0" cy="-2" r="1.5" fill="#6366f1"/>
+    <text x="0" y="24" text-anchor="middle" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="13">iPhone / iOS</text>
+  </g>
+
+  <!-- Node 2: Windows PC (Top Right) -->
+  <g transform="translate(810, 200)">
+    <rect x="-60" y="-45" width="120" height="90" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow)"/>
+    <!-- Windows icon -->
+    <g transform="translate(-10, -28)">
+      <rect x="0" y="0" width="9" height="9" fill="#0284c7"/>
+      <rect x="11" y="0" width="9" height="9" fill="#0284c7"/>
+      <rect x="0" y="11" width="9" height="9" fill="#0284c7"/>
+      <rect x="11" y="11" width="9" height="9" fill="#0284c7"/>
+    </g>
+    <text x="0" y="24" text-anchor="middle" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="13">Windows PC</text>
+  </g>
+
+  <!-- Node 3: Mac (Bottom Left) -->
+  <g transform="translate(390, 430)">
+    <rect x="-60" y="-45" width="120" height="90" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow)"/>
+    <!-- Laptop screen -->
+    <rect x="-16" y="-30" width="32" height="20" rx="2" fill="none" stroke="#ec4899" stroke-width="2"/>
+    <line x1="-22" y1="-8" x2="22" y2="-8" stroke="#ec4899" stroke-width="2"/>
+    <text x="0" y="24" text-anchor="middle" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="13">macOS</text>
+  </g>
+
+  <!-- Node 4: Android (Bottom Right) -->
+  <g transform="translate(810, 430)">
+    <rect x="-60" y="-45" width="120" height="90" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow)"/>
+    <!-- Android bot icon -->
+    <path d="M-10 -20 A10 10 0 0 1 10 -20 Z" fill="none" stroke="#16a34a" stroke-width="2"/>
+    <rect x="-10" y="-17" width="20" height="12" rx="2" fill="none" stroke="#16a34a" stroke-width="2"/>
+    <text x="0" y="24" text-anchor="middle" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="13">Android</text>
+  </g>
+
+  <!-- Top Badge -->
+  <g transform="translate(600, 75)">
+    <rect x="-120" y="-18" width="240" height="36" rx="18" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="0" y="6" text-anchor="middle" fill="#6d28d9" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="12" letter-spacing="1.5">CROSS-PLATFORM SHARING</text>
+  </g>
+</svg>

@@ -1,85 +1,160 @@
-<script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "url": "{{ site.url }}",
-      "logo": "{{ site.url }}{{ site.logo }}"
-    }
-</script>
-<script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
-      "name": "{{ site.name }}",
-      "url": "{{ site.url }}",
-      "description":"Description",
-      "isAccessibleForFree":true,
-      "inLanguage":"en"
-    }
-</script>
-
-
-
-{%- if pageData.howTo -%}
-{%- if pageData.howTo.size > 0-%}
-{%- assign howTo = pageData.howTo -%}
+<!-- Schema.org Organization -->
 <script type="application/ld+json">
 {
-  "@context": "http://schema.org",
-  "@type": "HowTo",
-  "name": "{{ howTo.heading }}",
-  "image": {
-      "@type": "ImageObject",
-      "url": "{{ howTo.logoImageUrl }}"
-  },
-  "step": [
-    {% for step in howTo.steps %}
-      {
-        "@type": "HowToStep",
-         "position": {{forloop.index}},
-        "text": "{{ step }}"
-      }
-      {% unless forloop.last %},{% endunless %}
-    {% endfor %}
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.name | default: 'FileDropShare' }}",
+  "url": "{{ site.url }}",
+  "logo": "{{ site.logo | default: '/assets/logo/file drop share logo.svg' | absolute_url }}",
+  "description": "{{ site.description | replace: '"', '\"' }}",
+  "sameAs": [
+    "https://twitter.com/{{ site.twitter_username | default: 'filedropshare' }}"
+  ]
+}
+</script>
+
+<!-- Schema.org WebSite with SearchAction -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.name | default: 'FileDropShare' }}",
+  "url": "{{ site.url }}",
+  "description": "{{ site.description | replace: '"', '\"' }}",
+  "inLanguage": "en",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ site.url }}/blog/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- Schema.org BreadcrumbList -->
+{%- if page.layout == "post" -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site.url }}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "{{ site.url }}/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ page.title | replace: '"', '\"' }}",
+      "item": "{{ page.url | absolute_url }}"
+    }
+  ]
+}
+</script>
+{%- elsif page.url != "/" and page.url != "/index.html" -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site.url }}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ pageData.h1 | default: page.title | default: page.name | replace: '"', '\"' }}",
+      "item": "{{ page.url | absolute_url }}"
+    }
   ]
 }
 </script>
 {%- endif -%}
-{%- endif -%}
 
-
-{%- if pageData.faqs -%}
-{%- if pageData.faqs.size > 0 -%}
+<!-- Schema.org BlogPosting for Articles -->
+{%- if page.layout == "post" -%}
 <script type="application/ld+json">
 {
-  "@context": "http://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {%- for item in pageData.faqs -%}
-      {%- if forloop.last == true -%}
-        {
-          "@type": "Question",
-          "name": "{{ item.question | replace: '"', "'" }}",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "{{ item.answer | replace: '"', "'" }}"
-          }
-        }
-      {%- else -%}
-        {
-          "@type": "Question",
-          "name": "{{ item.question | replace: '"', "'" }}",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "{{ item.answer | replace: '"', "'" }}"
-          }
-        },
-      {%- endif -%}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | absolute_url }}"
+  },
+  "headline": "{{ page.title | replace: '"', '\"' }}",
+  "description": "{{ page.description | default: page.excerpt | strip_html | strip_newlines | replace: '"', '\"' }}",
+  "image": "{{ page.image | default: site.og_image | absolute_url }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ page.author | default: site.blog.author }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.name }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.logo | default: '/assets/logo/file drop share logo.svg' | absolute_url }}"
+    }
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}"
+}
+</script>
+{%- endif -%}
+
+<!-- Schema.org HowTo -->
+{%- if pageData.howTo and pageData.howTo.size > 0 -%}
+{%- assign howTo = pageData.howTo -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "{{ howTo.heading | replace: '"', '\"' }}",
+  {% if howTo.logoImageUrl %}"image": {
+    "@type": "ImageObject",
+    "url": "{{ howTo.logoImageUrl | absolute_url }}"
+  },{% endif %}
+  "step": [
+    {%- for step in howTo.steps -%}
+    {
+      "@type": "HowToStep",
+      "position": {{ forloop.index }},
+      "text": "{{ step | replace: '"', '\"' }}"
+    }{% unless forloop.last %},{% endunless %}
     {%- endfor -%}
   ]
 }
 </script>
 {%- endif -%}
+
+<!-- Schema.org FAQPage -->
+{%- if pageData.faqs and pageData.faqs.size > 0 -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for item in pageData.faqs -%}
+    {
+      "@type": "Question",
+      "name": "{{ item.question | replace: '"', '\"' }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.answer | replace: '"', '\"' }}"
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+}
+</script>
 {%- endif -%}
-
-

@@ -74,6 +74,14 @@
         {
             "question": "Is my file transfer secure?",
             "answer": "Yes, Your large files (videos, photos, documents etc.) are 100% safe and secure during transfer by using our peer-to-peer (P2P) technology, which transfers data directly without uploading it to any server."
+        },
+        {
+            "question": "How can I share big files online for free, even 10GB or more?",
+            "answer": "Add your big file on FileDropShare and share the link. Because the file goes directly from your device to the receiver without an upload to a server, you can send large files free, including 10GB and bigger, with no sign-up."
+        },
+        {
+            "question": "Can I get a link for my file to download on another device?",
+            "answer": "Yes. As soon as you add the file you get a file link and a QR code. Open the link on any device, or scan the QR code with a phone, to start the download."
         }
     ]
 }

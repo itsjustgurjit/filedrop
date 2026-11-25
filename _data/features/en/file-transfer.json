@@ -79,6 +79,14 @@
         {
             "question": "How can I receive large files by using our webtool?",
             "answer": "We provide three options to receive large files: You can paste the link or scan the QR code on the device where you want to receive the file and click the download button. Additionally, we offer a unique ID that you can enter and tap the connect button to receive your file."
+        },
+        {
+            "question": "Is this a web based file transfer service?",
+            "answer": "Yes. FileDropShare is a web based file transfer service that runs in your browser, so there is no software or app to install. Open the site on Windows, Mac, Android or iPhone and start sharing."
+        },
+        {
+            "question": "How do I create a file transfer link to share?",
+            "answer": "Select the file you want to send and a file transfer link is created automatically. Copy it and share it by message, email or QR code. The link works while your transfer page stays open."
         }
     ]
 }

@@ -1,5 +1,5 @@
 
-const PEER_HOST = "serverside-file-share.onrender.com";
+const PEER_HOST = "serverside-file-share-0hn8.onrender.com";
 
 let peer = null;
 let connection = null;
@@ -264,14 +264,7 @@ function onDataReceived(data) {
 
 function onConnectionClose() {
   updateStatus("Connection closed", "warning");
-  connection_input_status.innerHTML = `<h3>Connect to Peer:</h3>
-    <input
-      type="text"
-      id="peerIdInput"
-      placeholder="Enter peer's connection ID"
-    />
-    <button class="connectButton" onclick="">Connect</button>
-  </div>`;
+  connection_input_status.innerHTML = ``;
   resetUI();
 }
 

@@ -5,6 +5,10 @@ group :jekyll_plugins do
   gem "jekyll-sitemap"
   gem "jekyll-include-cache"
   gem 'jekyll-paginate'
+  gem 'csv'
+  gem 'logger'
+  gem 'base64'
+  
 end
 platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo", ">= 1", "< 3"

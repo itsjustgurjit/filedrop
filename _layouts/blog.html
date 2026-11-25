@@ -1,82 +1,266 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang }}">
-{%- include /head.html -%}
-
-
-<style>
-  h1{
-    color: black;
-  }
-  .card {
-    height: 100%;
-  }
-
-  .card-title a {
-    text-decoration: none;
-    color: #000;
-  }
-
-  .card-title{
-    font-size: 20px !important;
-  }
-  .post-data {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-</style>
+<html lang="{{ page.lang | default: 'en' }}">
+{%- include head.html -%}
+<link rel="stylesheet" href="/assets/css/blog.css">
 
 <body>
-  {%- include /navbar.html -%}
-  <div class="container my-5">
-    <div class="row">
-      <div class="col-lg-10  mx-auto">
-        <div class="mt-5 headings text-left">
+  {%- include navbar.html -%}
 
-      
-          {%- if site.posts.size == 0 -%}
-          <h1 class="page-h1 mb-3">No blog posts yet.</h1>
-          {%- else -%}
-          <h1>The FileDropShare Blog</h1>
-          {%- endif -%}
-        
+  <main class="blog-wrapper">
+    <div class="container py-4">
+
+      <!-- Hero Header Section -->
+      <section class="blog-hero">
+        <div class="blog-hero-badge">
+          <span class="pulse-dot"></span>
+          FILEDROPSHARE BLOG
         </div>
+        <h1 class="blog-hero-title">GUIDES, INSIGHTS & <span>TECH INNOVATION</span></h1>
+        <p class="blog-hero-desc">
+          Master real-time peer-to-peer file sharing, explore WebRTC mechanics, and discover best practices for cross-platform transfers.
+        </p>
 
-        <section class="row">
-          {% for post in paginator.posts %}
-          <div class="col-md-4 mb-5">
-            <div class="card p-3">
-              <a href="{{ post.url | absolute_url }}">
-                {% if post.image %} <img class="w-100 rounded mb-4" src="{{ site.baseurl }}/{{ post.image }}"
-                  alt="{{ post.title }}"> {% endif %}
-              </a>
-              <div class="card-block">
-                <h3 class="card-title h4 serif-font"><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h3>
-                <p class="card-text text-muted">{{ post.excerpt | strip_html | truncatewords:16 }}</p>
+        <!-- Search and Category Filters -->
+        <div class="blog-controls">
+          <div class="blog-search-box">
+            <svg class="blog-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="blogSearchInput" class="blog-search-input" placeholder="Search articles by title, topic, or keyword..." autocomplete="off">
+          </div>
 
-                <div class="metafooter">
-                  <div class="wrapfooter small d-flex align-items-center">
-                    <div class="post-data">
-                      <img loading="lazy" src="/favicon.svg" alt="Author Image" width="30px" height="30px" />
-                      <div class="post-bio">
-                        <p class="mb-0" style="font-size: 15px">FILEDROPSHARE Staff</p>
-                        <span class="post-date" style="color: gray;">{{ post.date | date_to_string }}</span>
-                      </div>
-                    </div>
-                  </div>
+          <div class="blog-categories" id="categoryFilterContainer">
+            <button type="button" class="category-pill active" data-category="all">All Articles</button>
+            <button type="button" class="category-pill" data-category="technology">Technology</button>
+            <button type="button" class="category-pill" data-category="guides">Guides</button>
+            <button type="button" class="category-pill" data-category="security">Security</button>
+            <button type="button" class="category-pill" data-category="tips & tricks">Tips & Tricks</button>
+          </div>
+        </div>
+      </section>
+
+      {%- assign all_posts = paginator.posts | default: site.posts -%}
+
+      {%- if all_posts.size == 0 -%}
+        <div class="text-center py-5">
+          <h2 class="h3 text-muted">No blog articles published yet.</h2>
+          <p class="text-secondary">Check back soon for new guides and product updates!</p>
+        </div>
+      {%- else -%}
+
+        <!-- Featured Article Spotlight (Hero Post) -->
+        {%- assign featured_post = all_posts | where: "featured", true | first | default: all_posts.first -%}
+        {%- if featured_post -%}
+        <article class="featured-article-card" id="featuredArticle">
+          <div class="featured-article-image">
+            <span class="featured-badge">★ FEATURED GUIDE</span>
+            <a href="{{ featured_post.url | relative_url }}">
+              <img src="{{ featured_post.image | default: '/assets/images/blog/p2p-webrtc-transfer.svg' }}" alt="{{ featured_post.title }}" loading="lazy">
+            </a>
+          </div>
+          <div class="featured-article-body">
+            <div class="featured-category">{{ featured_post.category | default: "Featured" }}</div>
+            <h2 class="featured-title">
+              <a href="{{ featured_post.url | relative_url }}">{{ featured_post.title }}</a>
+            </h2>
+            <p class="featured-excerpt">
+              {{ featured_post.description | default: featured_post.excerpt | strip_html | truncatewords: 28 }}
+            </p>
+            <div class="article-meta">
+              <div class="author-info">
+                <img class="author-avatar" src="{{ featured_post.author_avatar | default: '/assets/images/blog/authors/team.svg' }}" alt="{{ featured_post.author }}">
+                <div>
+                  <div class="author-name">{{ featured_post.author | default: site.blog.author | default: "FileDrop Team" }}</div>
+                  <span class="post-date">{{ featured_post.date | date: "%b %d, %Y" }}</span>
                 </div>
               </div>
+              <span class="reading-pill">{{ featured_post.reading_time | default: "5 min read" }}</span>
             </div>
           </div>
-          {% endfor %}
-      </div>
+        </article>
+        {%- endif -%}
+
+        <!-- Articles Grid -->
+        <div class="articles-grid" id="articlesGrid">
+          {%- for post in all_posts -%}
+          <article class="article-card" 
+                   data-title="{{ post.title | downcase }}" 
+                   data-category="{{ post.category | downcase }}"
+                   data-tags="{{ post.tags | join: ' ' | downcase }}"
+                   {% if post.url == featured_post.url %}data-is-featured="true" style="display: none;"{% endif %}>
+            <div class="article-card-thumb">
+              {%- if post.category -%}
+              <span class="article-card-category">{{ post.category }}</span>
+              {%- endif -%}
+              <a href="{{ post.url | relative_url }}">
+                <img src="{{ post.image | default: '/assets/images/blog/p2p-webrtc-transfer.svg' }}" alt="{{ post.title }}" loading="lazy">
+              </a>
+            </div>
+            <div class="article-card-body">
+              <h3 class="article-card-title">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </h3>
+              <p class="article-card-excerpt">
+                {{ post.description | default: post.excerpt | strip_html | truncatewords: 20 }}
+              </p>
+              <div class="article-meta">
+                <div class="author-info">
+                  <img class="author-avatar" src="{{ post.author_avatar | default: '/assets/images/blog/authors/team.svg' }}" alt="{{ post.author }}">
+                  <div>
+                    <div class="author-name">{{ post.author | default: site.blog.author | default: "FileDrop Team" }}</div>
+                    <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
+                  </div>
+                </div>
+                <span class="reading-pill">{{ post.reading_time | default: "5 min read" }}</span>
+              </div>
+            </div>
+          </article>
+          {%- endfor -%}
+        </div>
+
+        <!-- No search results placeholder -->
+        <div id="noResultsMessage" class="text-center py-5 d-none">
+          <h3 class="h5 text-dark font-weight-bold">No articles match your search</h3>
+          <p class="text-muted small">Try using different keywords or selecting "All Articles".</p>
+          <button class="btn btn-outline-dark btn-sm mt-2 rounded-pill px-3" onclick="resetFilters()">Reset Search</button>
+        </div>
+
+        <!-- Pagination Controls -->
+        {%- if paginator.total_pages > 1 -%}
+        <nav class="blog-pagination" aria-label="Blog Pagination">
+          {%- if paginator.previous_page -%}
+          <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-btn">← Previous</a>
+          {%- else -%}
+          <span class="pagination-btn disabled">← Previous</span>
+          {%- endif -%}
+
+          {%- for page in (1..paginator.total_pages) -%}
+            {%- if page == paginator.page -%}
+            <span class="pagination-btn active">{{ page }}</span>
+            {%- elsif page == 1 -%}
+            <a href="/blog/" class="pagination-btn">{{ page }}</a>
+            {%- else -%}
+            <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}" class="pagination-btn">{{ page }}</a>
+            {%- endif -%}
+          {%- endfor -%}
+
+          {%- if paginator.next_page -%}
+          <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-btn">Next →</a>
+          {%- else -%}
+          <span class="pagination-btn disabled">Next →</span>
+          {%- endif -%}
+        </nav>
+        {%- endif -%}
+
+      {%- endif -%}
+
+      <!-- Bottom Call To Action Banner -->
+      <section class="blog-cta-banner">
+        <h3>READY TO EXPERIENCE INSTANT FILE TRANSFERS?</h3>
+        <p>Transfer unlimited files directly between any devices with end-to-end encryption. No software to install and no registration needed.</p>
+        <a href="/" class="blog-cta-btn">
+          <span>Start Direct File Transfer</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
       </section>
 
     </div>
-  </div>
-  </div>
-  {%- include /footer.html -%}
-</body>
+  </main>
 
+  {%- include footer.html -%}
+
+  <!-- Client-side Interactive Filter & Search Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchInput = document.getElementById('blogSearchInput');
+      const categoryPills = document.querySelectorAll('.category-pill');
+      const cards = document.querySelectorAll('.article-card');
+      const noResults = document.getElementById('noResultsMessage');
+      const featuredCard = document.getElementById('featuredArticle');
+
+      let currentCategory = 'all';
+      let searchQuery = '';
+
+      function filterArticles() {
+        let visibleCount = 0;
+        const isDefaultView = (currentCategory === 'all' && searchQuery === '');
+
+        cards.forEach(card => {
+          const title = card.getAttribute('data-title') || '';
+          const category = card.getAttribute('data-category') || '';
+          const tags = card.getAttribute('data-tags') || '';
+          const isFeatured = card.getAttribute('data-is-featured') === 'true';
+
+          const matchesCategory = (currentCategory === 'all') || (category === currentCategory);
+          const matchesSearch = !searchQuery || 
+                                title.includes(searchQuery) || 
+                                category.includes(searchQuery) || 
+                                tags.includes(searchQuery);
+
+          if (matchesCategory && matchesSearch) {
+            if (isDefaultView && isFeatured) {
+              card.style.display = 'none'; // hide duplicate in grid if featured at top
+            } else {
+              card.style.display = 'flex';
+              visibleCount++;
+            }
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Toggle featured post visibility during search or category filter
+        if (featuredCard) {
+          if (!isDefaultView) {
+            featuredCard.style.display = 'none';
+          } else {
+            featuredCard.style.display = 'flex';
+            visibleCount++;
+          }
+        }
+
+        if (visibleCount === 0) {
+          noResults.classList.remove('d-none');
+        } else {
+          noResults.classList.add('d-none');
+        }
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+          searchQuery = e.target.value.toLowerCase().trim();
+          filterArticles();
+        });
+      }
+
+      categoryPills.forEach(pill => {
+        pill.addEventListener('click', function() {
+          categoryPills.forEach(p => p.classList.remove('active'));
+          this.classList.add('active');
+          currentCategory = this.getAttribute('data-category').toLowerCase();
+          filterArticles();
+        });
+      });
+
+      window.resetFilters = function() {
+        if (searchInput) searchInput.value = '';
+        searchQuery = '';
+        currentCategory = 'all';
+        categoryPills.forEach(p => {
+          if (p.getAttribute('data-category') === 'all') {
+            p.classList.add('active');
+          } else {
+            p.classList.remove('active');
+          }
+        });
+        filterArticles();
+      };
+    });
+  </script>
+  <script src="/assets/js/nav.js"></script>
+</body>
 </html>
