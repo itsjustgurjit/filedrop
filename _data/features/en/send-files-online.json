@@ -2,7 +2,7 @@
     "Language": "English",
     "htmlLangAtt": "en",
     "title": "Send Large Files Online - Free & Secure Instant File Transfer",
-    "meta": "Easily share huge files with Send Files Online—fast, secure, and completely free, with no sign-ups or registrations required.",
+    "meta": "Learn how to share big files online for free with Send Files Online—fast, secure, and completely free, with no sign-ups or registrations required.",
     "h1": "Send Files Online",
     "h2": "Send Files Online – Fast, Secure & Peer-to-Peer, No Upload Required",
     "featureHighlights": [
@@ -17,7 +17,7 @@
              "image": "/assets/images/feature-highlight-images/free.svg",
             "title": "Free & No Sign-Ups",
             "description": [
-                "Enjoy completely free file transfers with no hidden fees or subscriptions. No account creation required—just start sharing right away."
+                "Enjoy completely free file transfers with no hidden fees or subscriptions. No account creation or login required—just upload, share the file link and start sharing right away."
             ]
         },
         {
@@ -51,7 +51,7 @@
     ],
     "howTo": {
         "image": "/assets/images/change-background/change-bg-how-to.webp",
-        "heading": "How to send files online for free without any registration or sign up ?",
+        "heading": "How to share big files online for free without any registration or sign up?",
         "steps": [
             "Drag and drop a file from your device by clicking the given button.",
             "After uploading, you will see a link and QR code on your screen for your file to download on another device.",
@@ -74,6 +74,18 @@
         {
             "question": "Is it possible to send files between two different devices?",
             "answer": "Absolutely yes! You can share files between any devices. There are no restrictions on device types—it works on laptops, Windows, Android and more."
+        },
+        {
+            "question": "Can I send a file anonymously?",
+            "answer": "Yes. You don't need to create an account or share your email. Your file is not uploaded to any server, and the link is generated on the spot, so you can send a file anonymously to anyone."
+        },
+        {
+            "question": "Can I upload and share a zip file online?",
+            "answer": "Yes, you can send zip files in the same way as any other file. Just add the zip, share the generated link or QR code, and the receiver can download it."
+        },
+        {
+            "question": "How can I share big files online for free?",
+            "answer": "Open FileDropShare, click 'Add file' and choose your big file. A link and QR code are created instantly. Send the link to the receiver and they download the file directly from your device. It is free, needs no account, and has no file size limit because nothing is uploaded to a server."
         }
     ]
 }

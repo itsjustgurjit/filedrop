@@ -1,0 +1,116 @@
+<!-- Product Hunt Badge Component -->
+<div class="ph-badge-wrap">
+  <a href="https://www.producthunt.com/@filedropshare" target="_blank" rel="noopener noreferrer" class="ph-button" title="Find and support FileDropShare on Product Hunt">
+    <div class="ph-logo-box">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="12" fill="#FF6154"/>
+        <path d="M12.96 12.72H10.56V9.12H12.96C13.9541 9.12 14.76 9.92589 14.76 10.92C14.76 11.9141 13.9541 12.72 12.96 12.72ZM12.96 7.44H8.88V16.56H10.56V14.4H12.96C14.882 14.4 16.44 12.842 16.44 10.92C16.44 8.99802 14.882 7.44 12.96 7.44Z" fill="white"/>
+      </svg>
+    </div>
+    <div class="ph-content">
+      <span class="ph-label">FEATURED ON</span>
+      <span class="ph-name">Product Hunt</span>
+    </div>
+    <div class="ph-upvote-chip">
+      <svg width="11" height="11" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 2L10.5 8.5H1.5L6 2Z" fill="currentColor"/>
+      </svg>
+      <span class="ph-upvote-text">Visit</span>
+    </div>
+  </a>
+</div>
+
+<style>
+  .ph-badge-wrap {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 0 1.25rem;
+    position: relative;
+    z-index: 5;
+  }
+
+  .ph-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    border: 1.5px solid #eaecf0;
+    padding: 6px 14px 6px 8px;
+    border-radius: 999px;
+    text-decoration: none !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    color: #111827;
+  }
+
+  .ph-button:hover {
+    transform: translateY(-2px);
+    border-color: #ff6154;
+    box-shadow: 0 8px 24px rgba(255, 97, 84, 0.2);
+    color: #111827;
+  }
+
+  .ph-logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .ph-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 1.15;
+  }
+
+  .ph-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #64748b;
+    text-transform: uppercase;
+  }
+
+  .ph-name {
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.2px;
+  }
+
+  .ph-button:hover .ph-name {
+    color: #ff6154;
+  }
+
+  .ph-upvote-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #fff0ee;
+    color: #ff6154;
+    border: 1px solid rgba(255, 97, 84, 0.2);
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    margin-left: 2px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .ph-button:hover .ph-upvote-chip {
+    background: #ff6154;
+    color: #ffffff;
+  }
+
+  @media (max-width: 576px) {
+    .ph-button {
+      padding: 5px 12px 5px 7px;
+      gap: 8px;
+    }
+    .ph-name {
+      font-size: 0.85rem;
+    }
+  }
+</style>

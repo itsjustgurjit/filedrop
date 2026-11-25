@@ -2,7 +2,7 @@
     "Language": "English",
     "htmlLangAtt": "en",
     "title": "Send Huge Files online from iPhone to Windows",
-    "meta": "Send large files quickly and directly with Iphone to windows file transfer—fast, secure, and 100% free, no sign-ups needed.",
+    "meta": "Send large files from iPhone to Windows with this free file drop online tool—fast, direct, secure and 100% free, no sign-ups needed.",
     "h1": "Iphone to windows file transfer",
     "h2": "iPhone to Windows File Transfer – Send Large Files Fast, Secure & Wireless",
     "featureHighlights": [
@@ -70,6 +70,10 @@
         {
             "question": "What should I do to send huge files from iPhones to Windows?",
             "answer": "You only need to send the URL or scan the code to transfer your file from iPhones to Windows."
+        },
+        {
+            "question": "Is FileDropShare a file drop online tool for iPhone and Windows?",
+            "answer": "Yes. FileDropShare works like a file drop online: open it in Safari on your iPhone, add your file, and share the link or QR code. On your Windows PC, open the link in any browser and the file downloads directly, with no app, cable or account."
         }
     ]
 }

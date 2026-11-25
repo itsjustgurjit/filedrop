@@ -1,19 +1,26 @@
-name: filedropshare
-title: filedropshare
-email: your-email@filedropshare.com
-description: Share files directly, quickly and securely with our free FileDropShare. We provide the simplest way to transfer your big files without any sign-up.
+name: FileDropShare
+title: FileDropShare - Free Peer-to-Peer Large File Transfer
+email: contact@filedropshare.com
+description: Share files directly, quickly and securely with free FileDropShare. Transfer unlimited large files peer-to-peer without server storage or sign-up.
 baseurl: "" 
 url: https://filedropshare.com
 favicon: /favicon.svg
-permalink: /blog/:title
-paginate: '12'
+logo: /assets/logo/file drop share logo.svg
+og_image: /assets/images/blog/p2p-webrtc-transfer.svg
+permalink: /blog/:title/
+paginate: 6
 paginate_path: '/blog/page:num/'
-twitter_username: jekyllrb
-github_username:  jekyll
-keywords: Seo Tools, Web Tools, Text Tools, Image Tools, Video Tools, Website Management Tools, Domain Tools, PDF Tools, Development Tools, Unit Converter, Online Calculators
+twitter_username: filedropshare
+github_username:  filedropshare
+keywords: file transfer, p2p file share, send large files, share files online, webrtc file sharing, peer to peer transfer, free file transfer, secure file sharing, cross platform transfer, send files without limit
 languageslist: en&&hi&&ru&&zh-tw&&ja&&es&&fr&&de&&ko&&th&&uk&&vi
 plugins:
   - jekyll-feed
-  
-  
-  
+  - jekyll-paginate
+  - jekyll-sitemap
+
+# Blog Defaults
+blog:
+  author: "FileDrop Team"
+  author_bio: "The engineering and product team behind FileDropShare, making real-time, peer-to-peer file transfers fast, private, and frictionless."
+  author_avatar: "/assets/images/blog/authors/team.svg"

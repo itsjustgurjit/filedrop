@@ -1,0 +1,241 @@
+<!-- Popular Blogs Section for Tool Pages -->
+{%- if site.posts.size > 0 -%}
+<div class="popular-blogs-section my-5 pt-4">
+  <div class="text-center mb-4">
+  
+    <h2 class="text-center fw-bolder feature-heading mt-2" style="color: #000000;">Popular Blogs</h2>
+    <p class="popular-blogs-subtitle">
+      Explore expert guides, security tips, and deep dives on fast peer-to-peer file sharing.
+    </p>
+  </div>
+
+  <div class="row g-4 justify-content-center">
+    {%- assign popular_posts = site.posts | slice: 0, 3 -%}
+    {%- for post in popular_posts -%}
+    <div class="col-md-4 col-sm-6 mb-4">
+      <article class="popular-blog-card h-100">
+        <a href="{{ post.url | relative_url }}" class="popular-blog-thumb">
+          {%- if post.category -%}
+          <span class="popular-blog-category">{{ post.category }}</span>
+          {%- endif -%}
+          <img src="{{ post.image | default: '/assets/images/blog/p2p-webrtc-transfer.svg' }}" alt="{{ post.title }}" loading="lazy">
+        </a>
+        <div class="popular-blog-body">
+          <h3 class="popular-blog-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          <p class="popular-blog-excerpt">
+            {{ post.description | default: post.excerpt | strip_html | truncatewords: 18 }}
+          </p>
+          <div class="popular-blog-meta">
+            <div class="popular-blog-author">
+              <img src="{{ post.author_avatar | default: '/assets/images/blog/authors/team.svg' }}" alt="{{ post.author }}" class="popular-blog-avatar">
+              <span class="popular-blog-author-name">{{ post.author | default: "FileDrop Team" }}</span>
+            </div>
+            <span class="popular-blog-time">{{ post.reading_time | default: "5 min read" }}</span>
+          </div>
+        </div>
+      </article>
+    </div>
+    {%- endfor -%}
+  </div>
+
+  <div class="text-center mt-3 pb-4">
+    <a href="/blog/" class="view-all-blogs-btn">
+      <span>View All Articles</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<style>
+  .popular-blogs-section {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 3.5rem !important;
+  }
+
+  .popular-blog-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #dbff4b;
+    color: #000000;
+    border: 1px solid #c4e83a;
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .popular-blog-badge .badge-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #000000;
+    border-radius: 50%;
+  }
+
+  .popular-blogs-subtitle {
+    color: #94a3b8 !important;
+    font-size: 0.95rem;
+    max-width: 580px;
+    margin: 0.5rem auto 2.5rem;
+    font-weight: 300;
+  }
+
+  .popular-blog-card {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .popular-blog-card:hover {
+    transform: translateY(-5px);
+    border-color: #2563eb;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  .popular-blog-thumb {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    display: block;
+    background: #f8fafc;
+  }
+
+  .popular-blog-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+    display: block;
+  }
+
+  .popular-blog-card:hover .popular-blog-thumb img {
+    transform: scale(1.04);
+  }
+
+  .popular-blog-category {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+  }
+
+  .popular-blog-body {
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: left;
+    background: #ffffff;
+  }
+
+  .popular-blog-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
+  }
+
+  .popular-blog-title a {
+    color: #0f172a;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .popular-blog-title a:hover {
+    color: #2563eb;
+  }
+
+  .popular-blog-excerpt {
+    color: #64748b !important;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex-grow: 1;
+    font-weight: 300;
+  }
+
+  .popular-blog-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.9rem;
+    border-top: 1px solid #f1f5f9;
+    margin-top: auto;
+  }
+
+  .popular-blog-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .popular-blog-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #e2e8f0;
+  }
+
+  .popular-blog-author-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #0f172a;
+  }
+
+  .popular-blog-time {
+    font-size: 0.72rem;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 3px 8px;
+    border-radius: 999px;
+  }
+
+  .view-all-blogs-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #000000;
+    color: #dbff4b;
+    border: 1.5px solid #000000;
+    padding: 10px 26px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .view-all-blogs-btn:hover {
+    background: #dbff4b;
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(219, 255, 75, 0.3);
+  }
+</style>
+{%- endif -%}
